@@ -67,10 +67,6 @@ body {
 }
 
 .page-section {
-    display: none;
-}
-
-.page-section--active {
     display: block;
 }
 
