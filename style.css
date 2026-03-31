@@ -66,6 +66,14 @@ body {
     padding: 0 16px 48px;
 }
 
+.page-section {
+    display: none;
+}
+
+.page-section--active {
+    display: block;
+}
+
 .page-title {
     font-size: 1.6rem;
     margin-bottom: 12px;
