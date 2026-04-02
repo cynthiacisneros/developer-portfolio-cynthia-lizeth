@@ -18,11 +18,10 @@ body {
 .site-header {
     padding: 24px 16px 0;
     text-align: center;
-}
-
-.banner-title h1 {
-    font-size: 2rem;
-    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-tabs {
@@ -31,7 +30,7 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     gap: 0px;
-    margin: 0 auto 24px;
+    margin: 0 auto;
     padding: 8px;
     background: #ffffff;
     border: 1px solid #e5e7eb;
@@ -39,6 +38,16 @@ body {
     width: 100%;
     max-width: 980px;
     overflow-x: auto;
+}
+
+.banner-title {
+    width: 100%;
+    max-width: 980px;
+}
+
+.banner-title h1 {
+    font-size: 2rem;
+    margin: 0 0 16px;
 }
 
 .nav-tab {
