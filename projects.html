@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cynthia Lizeth Cisneros - Projects</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -29,6 +30,137 @@
           This section showcases work I have built or contributed to, what I learned along the way,
           and how I applied my skills to solve real problems.
         </p>
+      </section>
+
+      <section
+        class="projects-gallery"
+        data-project-gallery
+        aria-label="Project gallery with category filters"
+      >
+        <div class="project-filters" role="group" aria-label="Filter projects by category">
+          <button
+            type="button"
+            class="filter-btn filter-btn--active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
+          <button type="button" class="filter-btn" data-filter="html-css" aria-pressed="false">
+            HTML/CSS
+          </button>
+          <button type="button" class="filter-btn" data-filter="ui-ux" aria-pressed="false">
+            UI/UX
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            data-filter="synthesis-project"
+            aria-pressed="false"
+          >
+            Synthesis Project
+          </button>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-category="html-css">
+            <span class="project-card__category">HTML/CSS</span>
+            <h3 class="project-card__title">Personal developer portfolio</h3>
+            <p class="project-card__desc">
+              This multi-page portfolio site: semantic HTML structure, shared styles, and responsive
+              navigation across Home, About, Skills, Projects, Creative Interests, and Contact.
+            </p>
+            <div class="project-card__links">
+              <a
+                class="project-card__link"
+                href="https://github.com/YOUR_USERNAME/developer-portfolio-cynthia-lizeth"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a>
+              <a class="project-card__link project-card__link--secondary" href="index.html"
+                >Live site</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="html-css">
+            <span class="project-card__category">HTML/CSS</span>
+            <h3 class="project-card__title">Responsive layout patterns</h3>
+            <p class="project-card__desc">
+              Practice building flexible layouts with CSS Grid and Flexbox, plus media queries so
+              content stays readable from mobile to desktop.
+            </p>
+            <div class="project-card__links">
+              <a
+                class="project-card__link"
+                href="https://github.com/YOUR_USERNAME/developer-portfolio-cynthia-lizeth"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="html-css">
+            <span class="project-card__category">HTML/CSS</span>
+            <h3 class="project-card__title">Semantic page foundations</h3>
+            <p class="project-card__desc">
+              Landmarks, headings, and navigation patterns that keep pages understandable for both
+              people and assistive technologies.
+            </p>
+            <div class="project-card__links">
+              <a class="project-card__link project-card__link--secondary" href="index.html"
+                >Live site</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ui-ux">
+            <span class="project-card__category">UI/UX</span>
+            <h3 class="project-card__title">Portfolio visual system</h3>
+            <p class="project-card__desc">
+              Typography, spacing, and color choices for a calm, cohesive look that matches the tone
+              of a personal developer portfolio.
+            </p>
+            <div class="project-card__links">
+              <a class="project-card__link project-card__link--secondary" href="about.html"
+                >View context</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="ui-ux">
+            <span class="project-card__category">UI/UX</span>
+            <h3 class="project-card__title">Navigation and content hierarchy</h3>
+            <p class="project-card__desc">
+              Tab-style navigation and page framing that make it easy to scan sections and move
+              between areas of the site without losing context.
+            </p>
+            <div class="project-card__links">
+              <a
+                class="project-card__link"
+                href="https://github.com/YOUR_USERNAME/developer-portfolio-cynthia-lizeth"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="synthesis-project">
+            <span class="project-card__category">Synthesis Project</span>
+            <h3 class="project-card__title">Course synthesis: full portfolio experience</h3>
+            <p class="project-card__desc">
+              A capstone-style deliverable that brings together HTML/CSS structure, UI decisions,
+              and this filterable project gallery in one coordinated site.
+            </p>
+            <div class="project-card__links">
+              <a
+                class="project-card__link"
+                href="https://github.com/YOUR_USERNAME/developer-portfolio-cynthia-lizeth"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a>
+              <a class="project-card__link project-card__link--secondary" href="index.html"
+                >Live site</a>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
   </body>
