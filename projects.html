@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cynthia Lizeth Cisneros - Projects</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -32,38 +31,10 @@
         </p>
       </section>
 
-      <section
-        class="projects-gallery"
-        data-project-gallery
-        aria-label="Project gallery with category filters"
-      >
-        <div class="project-filters" role="group" aria-label="Filter projects by category">
-          <button
-            type="button"
-            class="filter-btn filter-btn--active"
-            data-filter="all"
-            aria-pressed="true"
-          >
-            All
-          </button>
-          <button type="button" class="filter-btn" data-filter="html-css" aria-pressed="false">
-            HTML/CSS
-          </button>
-          <button type="button" class="filter-btn" data-filter="ui-ux" aria-pressed="false">
-            UI/UX
-          </button>
-          <button
-            type="button"
-            class="filter-btn"
-            data-filter="methods-of-information"
-            aria-pressed="false"
-          >
-            Methods of Information
-          </button>
-        </div>
-
+      <section class="projects-gallery" aria-label="Project gallery">
         <div class="project-grid">
-          <article class="project-card" data-category="html-css">
+          <article class="project-card">
+            <span class="project-card__category">HTML/CSS</span>
             <h3 class="project-card__title">Personal developer portfolio</h3>
             <p class="project-card__desc">
               Work across this multi-page portfolio and related coursework emphasizes semantic
@@ -91,7 +62,8 @@
             </div>
           </article>
 
-          <article class="project-card" data-category="ui-ux">
+          <article class="project-card">
+            <span class="project-card__category">UI/UX</span>
             <h3 class="project-card__title">Portfolio interface and experience</h3>
             <p class="project-card__desc">
               Interface and experience design through this site’s visual system and interactive Figma
@@ -113,7 +85,8 @@
             </div>
           </article>
 
-          <article class="project-card" data-category="methods-of-information">
+          <article class="project-card">
+            <span class="project-card__category">Methods of Information</span>
             <h3 class="project-card__title">Organizing and presenting information</h3>
             <p class="project-card__desc">
               Coursework applying methods of information: how content is structured, labeled, and
