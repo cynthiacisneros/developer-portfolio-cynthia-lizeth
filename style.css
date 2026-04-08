@@ -184,6 +184,10 @@ body {
     border: 1px solid #e5e7eb;
     padding: 4px 10px;
     border-radius: 999px;
+    max-width: 100%;
+    line-height: 1.25;
+    white-space: normal;
+    text-align: left;
 }
 
 .project-card__title {
