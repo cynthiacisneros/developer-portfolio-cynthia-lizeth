@@ -73,6 +73,10 @@ body {
     margin: 0;
 }
 
+.home-content__lead + .home-content__lead {
+    margin-top: 1.35rem;
+}
+
 /* ----- Project gallery ----- */
 
 .projects-gallery {
