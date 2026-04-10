@@ -7,34 +7,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="home-shell">
-      <header class="home-header">
-        <nav class="home-nav" aria-label="Primary navigation">
-          <a class="home-nav__link" href="index.html">Home</a>
-          <a class="home-nav__link home-nav__link--active" href="about.html">About</a>
-          <a class="home-nav__link" href="skills.html">Skills</a>
-          <a class="home-nav__link" href="projects.html">Projects</a>
-          <a class="home-nav__link" href="creativeinterests.html">Creative Interests</a>
-          <a class="home-nav__link" href="contact.html">Contact</a>
-        </nav>
-      </header>
+    <header class="site-header">
+      <nav class="nav-menu" aria-label="Primary navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="skills.html" class="nav-item">Skills</a>
+        <a href="projects.html" class="nav-item">Projects</a>
+        <a href="creativeinterests.html" class="nav-item">Creative</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </nav>
+    </header>
 
-      <main class="home-main home-main--inner">
-        <article class="home-content">
-          <p class="home-content__eyebrow">About</p>
-          <h1 class="home-content__title">About</h1>
-          <p class="home-content__lead">
-            Hi! I am Cynthia Lizeth Cisneros. This section introduces who I am, my background, and
-            the kinds of creative and technical work I enjoy.
-          </p>
-        </article>
-      </main>
-    </div>
+    <main class="home-main home-main--inner">
+      <article class="home-content">
+        <p class="home-content__eyebrow">About</p>
+        <h1 class="home-content__title">About</h1>
+        <p class="home-content__lead">
+          Hi! I am Cynthia Lizeth Cisneros. This section introduces who I am, my background, and the
+          kinds of creative and technical work I enjoy.
+        </p>
+      </article>
+    </main>
+
+    <script src="home.js"></script>
   </body>
 </html>

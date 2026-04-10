@@ -7,34 +7,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="home.css" />
   </head>
-  <body class="page-site--home">
-    <div class="home-shell">
-      <header class="home-header">
-        <nav class="home-nav" aria-label="Primary navigation">
-          <a class="home-nav__link home-nav__link--active" href="index.html">Home</a>
-          <a class="home-nav__link" href="about.html">About</a>
-          <a class="home-nav__link" href="skills.html">Skills</a>
-          <a class="home-nav__link" href="projects.html">Projects</a>
-          <a class="home-nav__link" href="creativeinterests.html">Creative Interests</a>
-          <a class="home-nav__link" href="contact.html">Contact</a>
-        </nav>
-      </header>
+  <body>
+    <header class="site-header">
+      <nav class="nav-menu" aria-label="Primary navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="skills.html" class="nav-item">Skills</a>
+        <a href="projects.html" class="nav-item">Projects</a>
+        <a href="creativeinterests.html" class="nav-item">Creative</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+      </nav>
+    </header>
 
-      <main class="home-main">
-        <section class="home-hero" aria-labelledby="hero-heading">
-          <p class="home-hero__eyebrow">Portfolio</p>
-          <h1 id="hero-heading" class="home-hero__title">Cynthia Lizeth Cisneros</h1>
-          <p class="home-hero__subtitle">
-            Frontend developer creating clean, thoughtful digital experiences.
-          </p>
-          <a class="home-hero__cta" href="projects.html">View My Work</a>
-        </section>
-      </main>
-    </div>
+    <main id="home" class="hero">
+      <p class="hero-label">PORTFOLIO</p>
+      <h1>Cynthia Lizeth<br />Cisneros</h1>
+      <p class="hero-subtext">
+        Frontend developer creating clean, thoughtful digital experiences.
+      </p>
+      <a href="projects.html" class="hero-button">View My Work</a>
+    </main>
+
+    <script src="home.js"></script>
   </body>
 </html>
