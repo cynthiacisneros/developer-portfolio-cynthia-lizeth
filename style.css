@@ -508,7 +508,7 @@ body.page-light .nav-item.active {
         0 6px 20px rgba(26, 26, 26, 0.07);
 }
 
-/* About page light colors: about.css (linked from about.html only) */
+/* About section light colors: about.css (index.html; archived copy in archive/legacy-html/) */
 
 /* Projects */
 body.page-light .project-grid {
@@ -566,7 +566,7 @@ body.page-light .project-card__link--secondary:hover {
     border-color: rgba(26, 26, 26, 0.14);
 }
 
-/* ----- Single-page index (index.html; old multi-page files unchanged) ----- */
+/* ----- Single-page index (index.html; legacy HTML in archive/legacy-html/) ----- */
 
 body.page-single {
     min-height: 100%;
