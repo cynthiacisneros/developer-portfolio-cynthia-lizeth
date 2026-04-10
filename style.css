@@ -77,6 +77,162 @@ body {
     margin-top: 1.35rem;
 }
 
+/* ----- About page (editorial two-column) ----- */
+
+.home-main--about {
+    max-width: 68rem;
+}
+
+.about-panel {
+    width: 100%;
+    margin: 0 auto;
+    padding: clamp(2.25rem, 5vw, 3.75rem) clamp(1.5rem, 4vw, 3rem);
+    border-radius: 20px;
+    border: 1px solid rgba(247, 243, 235, 0.09);
+    background: linear-gradient(
+        165deg,
+        rgba(247, 243, 235, 0.045) 0%,
+        rgba(245, 239, 228, 0.02) 45%,
+        rgba(11, 11, 13, 0.35) 100%
+    );
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.2) inset,
+        0 32px 80px rgba(0, 0, 0, 0.35),
+        0 0 60px rgba(247, 243, 235, 0.04);
+}
+
+.about-panel__eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(247, 243, 235, 0.52);
+    margin: 0 0 1.15rem;
+    text-align: center;
+}
+
+.about-panel__title {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    font-size: clamp(1.85rem, 4.2vw, 2.65rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #f7f3eb;
+    margin: 0 auto 1.5rem;
+    max-width: 42rem;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.about-panel__divider {
+    height: 1px;
+    max-width: 12rem;
+    margin: 0 auto 2.5rem;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(245, 239, 228, 0.35) 20%,
+        rgba(247, 243, 235, 0.5) 50%,
+        rgba(245, 239, 228, 0.35) 80%,
+        transparent
+    );
+    box-shadow: 0 0 12px rgba(245, 239, 228, 0.12);
+}
+
+.about-panel__columns {
+    display: grid;
+    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 3.25rem);
+    align-items: start;
+}
+
+.about-panel__figure {
+    margin: 0;
+    justify-self: center;
+    width: 100%;
+    max-width: 380px;
+}
+
+.about-panel__photo {
+    position: relative;
+    border-radius: 18px;
+    padding: 3px;
+    background: linear-gradient(
+        145deg,
+        rgba(247, 243, 235, 0.18),
+        rgba(245, 239, 228, 0.06) 40%,
+        rgba(247, 243, 235, 0.1)
+    );
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.45),
+        0 12px 32px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(247, 243, 235, 0.08) inset;
+    transform: translateY(-4px);
+}
+
+.about-panel__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 1px solid rgba(247, 243, 235, 0.1);
+    vertical-align: middle;
+}
+
+.about-panel__body {
+    max-width: 36rem;
+    padding-top: 0.25rem;
+}
+
+.about-panel__text {
+    font-size: clamp(1rem, 1.35vw, 1.0625rem);
+    line-height: 1.7;
+    color: rgba(245, 239, 228, 0.9);
+    margin: 0;
+    text-align: left;
+}
+
+.about-panel__text + .about-panel__text {
+    margin-top: 1.35rem;
+}
+
+@media (max-width: 900px) {
+    .about-panel__columns {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .about-panel__figure {
+        max-width: min(380px, 88vw);
+    }
+
+    .about-panel__photo {
+        transform: none;
+    }
+
+    .about-panel__body {
+        max-width: 38rem;
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .about-panel__text {
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .about-panel {
+        padding: clamp(1.75rem, 5vw, 2.25rem) clamp(1.15rem, 4vw, 1.5rem);
+        border-radius: 16px;
+    }
+
+    .about-panel__divider {
+        margin-bottom: 2rem;
+    }
+}
+
 /* ----- Project gallery ----- */
 
 .projects-gallery {
@@ -194,6 +350,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .about-panel__photo {
+        transform: none;
+    }
+
     .project-card,
     .project-card__link {
         transition-duration: 0.01ms;
