@@ -77,160 +77,252 @@ body {
     margin-top: 1.35rem;
 }
 
-/* ----- About page (editorial two-column) ----- */
+/* ----- About page (feature panel + portrait card) ----- */
 
 .home-main--about {
-    max-width: 68rem;
+    position: relative;
+    max-width: 66rem;
+    padding-top: clamp(2.5rem, 6vw, 4rem);
+    padding-bottom: clamp(3.5rem, 10vw, 6rem);
 }
 
-.about-panel {
+/* Soft warm glow behind the About feature (sits under .about-feature) */
+.home-main--about::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: clamp(3rem, 8vw, 5rem);
+    transform: translateX(-50%);
+    width: min(58rem, 118%);
+    height: min(52vh, 28rem);
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse 65% 55% at 50% 42%,
+            rgba(245, 239, 228, 0.12) 0%,
+            rgba(232, 220, 202, 0.06) 42%,
+            transparent 72%
+        ),
+        radial-gradient(
+            ellipse 50% 40% at 72% 58%,
+            rgba(237, 231, 223, 0.08) 0%,
+            transparent 65%
+        );
+    filter: blur(56px);
+    opacity: 0.9;
+}
+
+.about-feature {
+    position: relative;
+    z-index: 1;
     width: 100%;
     margin: 0 auto;
-    padding: clamp(2.25rem, 5vw, 3.75rem) clamp(1.5rem, 4vw, 3rem);
-    border-radius: 20px;
-    border: 1px solid rgba(247, 243, 235, 0.09);
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.75rem, 4vw, 3.25rem);
+    border-radius: 24px;
+    border: 1px solid rgba(247, 243, 235, 0.1);
     background: linear-gradient(
-        165deg,
-        rgba(247, 243, 235, 0.045) 0%,
-        rgba(245, 239, 228, 0.02) 45%,
-        rgba(11, 11, 13, 0.35) 100%
+        168deg,
+        rgba(247, 243, 235, 0.055) 0%,
+        rgba(19, 19, 22, 0.92) 42%,
+        #0e0e11 100%
     );
     box-shadow:
-        0 0 0 1px rgba(0, 0, 0, 0.2) inset,
-        0 32px 80px rgba(0, 0, 0, 0.35),
-        0 0 60px rgba(247, 243, 235, 0.04);
+        0 0 0 1px rgba(0, 0, 0, 0.35) inset,
+        0 40px 100px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(247, 243, 235, 0.035);
 }
 
-.about-panel__eyebrow {
+.about-feature__label {
     font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.32em;
+    letter-spacing: 0.35em;
     text-transform: uppercase;
-    color: rgba(247, 243, 235, 0.52);
-    margin: 0 0 1.15rem;
+    color: rgba(247, 243, 235, 0.48);
+    margin: 0 0 1.1rem;
     text-align: center;
 }
 
-.about-panel__title {
+.about-feature__title {
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
     font-weight: 500;
-    font-size: clamp(1.85rem, 4.2vw, 2.65rem);
-    line-height: 1.2;
+    font-size: clamp(1.9rem, 4vw, 2.75rem);
+    line-height: 1.18;
     letter-spacing: -0.02em;
     color: #f7f3eb;
-    margin: 0 auto 1.5rem;
-    max-width: 42rem;
+    margin: 0 auto 1.6rem;
+    max-width: 44rem;
     text-align: center;
     text-wrap: balance;
 }
 
-.about-panel__divider {
+.about-feature__divider {
     height: 1px;
-    max-width: 12rem;
-    margin: 0 auto 2.5rem;
+    max-width: 11rem;
+    margin: 0 auto 2.75rem;
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(245, 239, 228, 0.35) 20%,
-        rgba(247, 243, 235, 0.5) 50%,
-        rgba(245, 239, 228, 0.35) 80%,
+        rgba(243, 237, 226, 0.25) 25%,
+        rgba(247, 243, 235, 0.45) 50%,
+        rgba(243, 237, 226, 0.25) 75%,
         transparent
     );
-    box-shadow: 0 0 12px rgba(245, 239, 228, 0.12);
 }
 
-.about-panel__columns {
+.about-feature__grid {
     display: grid;
-    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
-    gap: clamp(2rem, 5vw, 3.25rem);
+    grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+    gap: clamp(2.25rem, 5vw, 3.5rem);
     align-items: start;
+    max-width: 58rem;
+    margin: 0 auto;
 }
 
-.about-panel__figure {
-    margin: 0;
-    justify-self: center;
-    width: 100%;
-    max-width: 380px;
-}
-
-.about-panel__photo {
+/* Portrait column: fixed card width, editorial offset frame */
+.about-feature__visual {
     position: relative;
-    border-radius: 18px;
-    padding: 3px;
-    background: linear-gradient(
-        145deg,
-        rgba(247, 243, 235, 0.18),
-        rgba(245, 239, 228, 0.06) 40%,
-        rgba(247, 243, 235, 0.1)
-    );
-    box-shadow:
-        0 24px 48px rgba(0, 0, 0, 0.45),
-        0 12px 32px rgba(0, 0, 0, 0.25),
-        0 0 0 1px rgba(247, 243, 235, 0.08) inset;
-    transform: translateY(-4px);
+    width: 100%;
+    max-width: 340px;
+    justify-self: center;
 }
 
-.about-panel__img {
+@media (min-width: 961px) {
+    .about-feature__visual {
+        justify-self: start;
+        margin-top: 0.35rem;
+    }
+}
+
+.about-feature__frame {
+    position: absolute;
+    left: 14px;
+    top: 18px;
+    width: min(320px, 100%);
+    aspect-ratio: 3 / 4;
+    border-radius: 28px;
+    background: #16161a;
+    border: 1px solid rgba(243, 237, 226, 0.1);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+.about-feature__figure {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: min(320px, 100%);
+}
+
+.about-feature__card {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 3 / 4;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(243, 237, 226, 0.16);
+    box-shadow:
+        0 24px 56px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+}
+
+.about-feature__img {
     display: block;
     width: 100%;
-    height: auto;
-    border-radius: 15px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Text panel: charcoal inset */
+.about-feature__panel {
+    background: #131316;
     border: 1px solid rgba(247, 243, 235, 0.1);
-    vertical-align: middle;
+    border-radius: 20px;
+    padding: clamp(1.85rem, 4vw, 2.65rem);
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.25) inset,
+        0 20px 50px rgba(0, 0, 0, 0.25);
+    min-width: 0;
 }
 
-.about-panel__body {
-    max-width: 36rem;
-    padding-top: 0.25rem;
-}
-
-.about-panel__text {
-    font-size: clamp(1rem, 1.35vw, 1.0625rem);
-    line-height: 1.7;
-    color: rgba(245, 239, 228, 0.9);
+.about-feature__text {
+    font-size: clamp(1rem, 0.4vw + 0.96rem, 1.05rem);
+    line-height: 1.75;
+    color: #f7f3eb;
     margin: 0;
     text-align: left;
 }
 
-.about-panel__text + .about-panel__text {
-    margin-top: 1.35rem;
+.about-feature__text + .about-feature__text {
+    margin-top: 1.25rem;
 }
 
-@media (max-width: 900px) {
-    .about-panel__columns {
+.about-feature__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.6rem;
+    margin-top: 1.85rem;
+    padding-top: 1.65rem;
+    border-top: 1px solid rgba(247, 243, 235, 0.1);
+}
+
+.about-feature__tag {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f3ede2;
+    background: rgba(247, 243, 235, 0.06);
+    border: 1px solid rgba(243, 237, 226, 0.14);
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+}
+
+@media (max-width: 960px) {
+    .about-feature__grid {
         grid-template-columns: 1fr;
         justify-items: center;
+        max-width: 28rem;
     }
 
-    .about-panel__figure {
-        max-width: min(380px, 88vw);
+    .about-feature__visual {
+        max-width: 320px;
+        margin-bottom: 0.25rem;
     }
 
-    .about-panel__photo {
-        transform: none;
+    .about-feature__frame {
+        left: 12px;
+        top: 14px;
+        width: min(300px, calc(100% - 8px));
     }
 
-    .about-panel__body {
-        max-width: 38rem;
-        text-align: center;
-        padding-top: 0;
+    .about-feature__figure {
+        max-width: 300px;
+        margin-inline: auto;
     }
 
-    .about-panel__text {
-        text-align: center;
+    .about-feature__card {
+        max-width: 300px;
+        margin: 0 auto;
     }
 
+    .about-feature__panel {
+        width: 100%;
+        max-width: 32rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .about-panel {
-        padding: clamp(1.75rem, 5vw, 2.25rem) clamp(1.15rem, 4vw, 1.5rem);
-        border-radius: 16px;
+    .about-feature {
+        padding: clamp(2rem, 6vw, 2.5rem) clamp(1.25rem, 4vw, 1.5rem);
+        border-radius: 20px;
     }
 
-    .about-panel__divider {
-        margin-bottom: 2rem;
+    .about-feature__divider {
+        margin-bottom: 2.25rem;
     }
+
 }
 
 /* ----- Project gallery ----- */
@@ -350,10 +442,6 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .about-panel__photo {
-        transform: none;
-    }
-
     .project-card,
     .project-card__link {
         transition-duration: 0.01ms;

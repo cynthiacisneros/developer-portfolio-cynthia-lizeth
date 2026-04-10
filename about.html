@@ -26,44 +26,56 @@
     </header>
 
     <main class="home-main home-main--inner home-main--about">
-      <section class="about-panel" aria-labelledby="about-heading">
-        <p class="about-panel__eyebrow">About me</p>
-        <h1 id="about-heading" class="about-panel__title">
+      <section class="about-feature" aria-labelledby="about-heading">
+        <p class="about-feature__label">About me</p>
+        <h1 id="about-heading" class="about-feature__title">
           Designing with intention, building with heart.
         </h1>
-        <div class="about-panel__divider" role="presentation"></div>
+        <div class="about-feature__divider" role="presentation"></div>
 
-        <div class="about-panel__columns">
-          <figure class="about-panel__figure">
-            <div class="about-panel__photo">
-              <img
-                class="about-panel__img"
-                src="images/about-portrait.png"
-                alt="Portrait of Cynthia Lizeth Cisneros, smiling, wearing a black sleeveless top against a light brick wall."
-                width="768"
-                height="1024"
-                loading="eager"
-              />
+        <div class="about-feature__grid">
+          <div class="about-feature__visual">
+            <div class="about-feature__frame" aria-hidden="true"></div>
+            <figure class="about-feature__figure">
+              <div class="about-feature__card">
+                <img
+                  class="about-feature__img"
+                  src="images/about-portrait.png"
+                  alt="Portrait of Cynthia Lizeth Cisneros, smiling, wearing a black sleeveless top against a light brick wall."
+                  width="768"
+                  height="1024"
+                  loading="eager"
+                />
+              </div>
+            </figure>
+          </div>
+
+          <div class="about-feature__panel">
+            <div class="about-feature__body">
+              <p class="about-feature__text">
+                I’m a frontend developer based in Mission, Texas, with a strong love for both
+                technology and thoughtful design. I’m currently pursuing a bachelor’s degree in
+                Computing Applications at Texas Tech University, where I continue to grow my skills
+                in development and digital problem-solving.
+              </p>
+              <p class="about-feature__text">
+                Outside of tech, I’m a mom, a student, and a working professional—roles that have
+                shaped the way I approach my work with discipline, empathy, and adaptability. I’m
+                naturally detail-oriented and reflective, and I enjoy creating digital experiences
+                that feel intentional, intuitive, and visually refined.
+              </p>
+              <p class="about-feature__text">
+                In my free time, I love exploring creativity through digital art and photography,
+                baking when I can slow down, and taking trips that allow me to reset and find
+                inspiration.
+              </p>
             </div>
-          </figure>
-
-          <div class="about-panel__body">
-            <p class="about-panel__text">
-              I’m a frontend developer based in Mission, Texas, with a strong love for both technology
-              and thoughtful design. I’m currently pursuing a bachelor’s degree in Computing
-              Applications at Texas Tech University, where I continue to grow my skills in
-              development and digital problem-solving.
-            </p>
-            <p class="about-panel__text">
-              Outside of tech, I’m a mom, a student, and a working professional—roles that have shaped
-              the way I approach my work with discipline, empathy, and adaptability. I’m naturally
-              detail-oriented and reflective, and I enjoy creating digital experiences that feel
-              intentional, intuitive, and visually refined.
-            </p>
-            <p class="about-panel__text">
-              In my free time, I love exploring creativity through digital art and photography, baking
-              when I can slow down, and taking trips that allow me to reset and find inspiration.
-            </p>
+            <div class="about-feature__tags" aria-label="Quick facts">
+              <span class="about-feature__tag">Frontend</span>
+              <span class="about-feature__tag">Mission, TX</span>
+              <span class="about-feature__tag">Texas Tech</span>
+              <span class="about-feature__tag">Computing Applications</span>
+            </div>
           </div>
         </div>
       </section>
