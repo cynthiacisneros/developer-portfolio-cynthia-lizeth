@@ -3,107 +3,112 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cynthia Lizeth Cisneros - Projects</title>
+    <title>Cynthia Lizeth Cisneros — Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav-tabs" aria-label="Primary navigation">
-        <a class="nav-tab" href="index.html">Home</a>
-        <a class="nav-tab" href="about.html">About</a>
-        <a class="nav-tab" href="skills.html">Skills</a>
-        <a class="nav-tab nav-tab--active" href="projects.html">Projects</a>
-        <a class="nav-tab" href="creativeinterests.html">Creative Interests</a>
-        <a class="nav-tab" href="contact.html">Contact</a>
-      </nav>
+    <div class="home-shell">
+      <header class="home-header">
+        <nav class="home-nav" aria-label="Primary navigation">
+          <a class="home-nav__link" href="index.html">Home</a>
+          <a class="home-nav__link" href="about.html">About</a>
+          <a class="home-nav__link" href="skills.html">Skills</a>
+          <a class="home-nav__link home-nav__link--active" href="projects.html">Projects</a>
+          <a class="home-nav__link" href="creativeinterests.html">Creative Interests</a>
+          <a class="home-nav__link" href="contact.html">Contact</a>
+        </nav>
+      </header>
 
-      <div class="banner-title">
-        <h1>Cynthia Lizeth Cisneros</h1>
-      </div>
-    </header>
+      <main class="home-main home-main--inner">
+        <article class="home-content home-content--tight-bottom">
+          <p class="home-content__eyebrow">Work</p>
+          <h1 class="home-content__title">Projects</h1>
+          <p class="home-content__lead">
+            This section showcases work I have built or contributed to, what I learned along the
+            way, and how I applied my skills to solve real problems.
+          </p>
+        </article>
 
-    <main class="page-content">
-      <section class="page-section">
-        <h2 class="page-title">Projects</h2>
-        <p class="page-lead">
-          This section showcases work I have built or contributed to, what I learned along the way,
-          and how I applied my skills to solve real problems.
-        </p>
-      </section>
+        <section class="projects-gallery" aria-label="Project gallery">
+          <div class="project-grid">
+            <article class="project-card">
+              <span class="project-card__category">HTML/CSS</span>
+              <h2 class="project-card__title">Personal developer portfolio</h2>
+              <p class="project-card__desc">
+                Work across this multi-page portfolio and related coursework emphasizes semantic
+                structure, shared styles, navigation, and hosted projects built with HTML and CSS.
+              </p>
+              <div class="project-card__links">
+                <a
+                  class="project-card__link"
+                  href="https://github.com/cynthiacisneros/CMPA-3304-D01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub: CMPA-3304-D01</a>
+                <a
+                  class="project-card__link project-card__link--secondary"
+                  href="https://github.com/cynthiacisneros/CMPA-3301-D01-Project-03"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub: Melon Heart (Project 03)</a>
+                <a
+                  class="project-card__link project-card__link--secondary"
+                  href="https://github.com/cynthiacisneros/cynthiacisneros.github.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub: cynthiacisneros.github.io</a>
+              </div>
+            </article>
 
-      <section class="projects-gallery" aria-label="Project gallery">
-        <div class="project-grid">
-          <article class="project-card">
-            <span class="project-card__category">HTML/CSS</span>
-            <h3 class="project-card__title">Personal developer portfolio</h3>
-            <p class="project-card__desc">
-              Work across this multi-page portfolio and related coursework emphasizes semantic
-              structure, shared styles, navigation, and hosted projects built with HTML and CSS.
-            </p>
-            <div class="project-card__links">
-              <a
-                class="project-card__link"
-                href="https://github.com/cynthiacisneros/CMPA-3304-D01"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub: CMPA-3304-D01</a>
-              <a
-                class="project-card__link project-card__link--secondary"
-                href="https://github.com/cynthiacisneros/CMPA-3301-D01-Project-03"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub: Melon Heart (Project 03)</a>
-              <a
-                class="project-card__link project-card__link--secondary"
-                href="https://github.com/cynthiacisneros/cynthiacisneros.github.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub: cynthiacisneros.github.io</a>
-            </div>
-          </article>
+            <article class="project-card">
+              <span class="project-card__category">UI/UX</span>
+              <h2 class="project-card__title">Portfolio interface and experience</h2>
+              <p class="project-card__desc">
+                Interface and experience design through this site’s visual system and interactive
+                Figma prototypes: product flows, layout, and design decisions for real app concepts.
+              </p>
+              <div class="project-card__links">
+                <a
+                  class="project-card__link"
+                  href="https://www.figma.com/proto/tcnXvxOql4MYo92ffZu80k/FuelPay?node-id=0-1&amp;t=vfcK2ZIZciH1n6Xp-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Figma: FuelPay</a>
+                <a
+                  class="project-card__link project-card__link--secondary"
+                  href="https://www.figma.com/proto/52bpewnXMWjqhCtBOieQTi/Group--1_FinalProject_LocalPulseCommunityEventsApp?node-id=0-1&amp;t=sYaMfUJbunjFYqx8-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Figma: LocalPulse</a>
+              </div>
+            </article>
 
-          <article class="project-card">
-            <span class="project-card__category">UI/UX</span>
-            <h3 class="project-card__title">Portfolio interface and experience</h3>
-            <p class="project-card__desc">
-              Interface and experience design through this site’s visual system and interactive Figma
-              prototypes: product flows, layout, and design decisions for real app concepts.
-            </p>
-            <div class="project-card__links">
-              <a
-                class="project-card__link"
-                href="https://www.figma.com/proto/tcnXvxOql4MYo92ffZu80k/FuelPay?node-id=0-1&amp;t=vfcK2ZIZciH1n6Xp-1"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Figma: FuelPay</a>
-              <a
-                class="project-card__link project-card__link--secondary"
-                href="https://www.figma.com/proto/52bpewnXMWjqhCtBOieQTi/Group--1_FinalProject_LocalPulseCommunityEventsApp?node-id=0-1&amp;t=sYaMfUJbunjFYqx8-1"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Figma: LocalPulse</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <span class="project-card__category">Methods of Information</span>
-            <h3 class="project-card__title">Organizing and presenting information</h3>
-            <p class="project-card__desc">
-              Coursework applying methods of information: how content is structured, labeled, and
-              connected so audiences can find what they need—aligned with clear hierarchy and
-              navigation across this portfolio.
-            </p>
-            <div class="project-card__links">
-              <a
-                class="project-card__link"
-                href="https://spring-xenon-c38.notion.site/Parent-Resource-Guide-for-Autism-315e01762ccd8020ae37e9fc51f65d75"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Notion: Parent Resource Guide</a>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
+            <article class="project-card">
+              <span class="project-card__category">Methods of Information</span>
+              <h2 class="project-card__title">Organizing and presenting information</h2>
+              <p class="project-card__desc">
+                Coursework applying methods of information: how content is structured, labeled, and
+                connected so audiences can find what they need—aligned with clear hierarchy and
+                navigation across this portfolio.
+              </p>
+              <div class="project-card__links">
+                <a
+                  class="project-card__link"
+                  href="https://spring-xenon-c38.notion.site/Parent-Resource-Guide-for-Autism-315e01762ccd8020ae37e9fc51f65d75"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Notion: Parent Resource Guide</a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

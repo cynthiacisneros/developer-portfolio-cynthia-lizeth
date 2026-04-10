@@ -3,33 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cynthia Lizeth Cisneros - About</title>
+    <title>Cynthia Lizeth Cisneros — About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav-tabs" aria-label="Primary navigation">
-        <a class="nav-tab" href="index.html">Home</a>
-        <a class="nav-tab nav-tab--active" href="about.html">About</a>
-        <a class="nav-tab" href="skills.html">Skills</a>
-        <a class="nav-tab" href="projects.html">Projects</a>
-        <a class="nav-tab" href="creativeinterests.html">Creative Interests</a>
-        <a class="nav-tab" href="contact.html">Contact</a>
-      </nav>
+    <div class="home-shell">
+      <header class="home-header">
+        <nav class="home-nav" aria-label="Primary navigation">
+          <a class="home-nav__link" href="index.html">Home</a>
+          <a class="home-nav__link home-nav__link--active" href="about.html">About</a>
+          <a class="home-nav__link" href="skills.html">Skills</a>
+          <a class="home-nav__link" href="projects.html">Projects</a>
+          <a class="home-nav__link" href="creativeinterests.html">Creative Interests</a>
+          <a class="home-nav__link" href="contact.html">Contact</a>
+        </nav>
+      </header>
 
-      <div class="banner-title">
-        <h1>Cynthia Lizeth Cisneros</h1>
-      </div>
-    </header>
-
-    <main class="page-content">
-      <section class="page-section">
-        <h2 class="page-title">About</h2>
-        <p class="page-lead">
-          Hi! I am Cynthia Lizeth Cisneros. This section introduces who I am,
-          my background, and the kinds of creative and technical work I enjoy.
-        </p>
-      </section>
-    </main>
+      <main class="home-main home-main--inner">
+        <article class="home-content">
+          <p class="home-content__eyebrow">About</p>
+          <h1 class="home-content__title">About</h1>
+          <p class="home-content__lead">
+            Hi! I am Cynthia Lizeth Cisneros. This section introduces who I am, my background, and
+            the kinds of creative and technical work I enjoy.
+          </p>
+        </article>
+      </main>
+    </div>
   </body>
 </html>

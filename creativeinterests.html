@@ -3,33 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cynthia Lizeth Cisneros - Creative Interests</title>
+    <title>Cynthia Lizeth Cisneros — Creative Interests</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
-      <nav class="nav-tabs" aria-label="Primary navigation">
-        <a class="nav-tab" href="index.html">Home</a>
-        <a class="nav-tab" href="about.html">About</a>
-        <a class="nav-tab" href="skills.html">Skills</a>
-        <a class="nav-tab" href="projects.html">Projects</a>
-        <a class="nav-tab nav-tab--active" href="creativeinterests.html">Creative Interests</a>
-        <a class="nav-tab" href="contact.html">Contact</a>
-      </nav>
+    <div class="home-shell">
+      <header class="home-header">
+        <nav class="home-nav" aria-label="Primary navigation">
+          <a class="home-nav__link" href="index.html">Home</a>
+          <a class="home-nav__link" href="about.html">About</a>
+          <a class="home-nav__link" href="skills.html">Skills</a>
+          <a class="home-nav__link" href="projects.html">Projects</a>
+          <a class="home-nav__link home-nav__link--active" href="creativeinterests.html"
+            >Creative Interests</a>
+          <a class="home-nav__link" href="contact.html">Contact</a>
+        </nav>
+      </header>
 
-      <div class="banner-title">
-        <h1>Cynthia Lizeth Cisneros</h1>
-      </div>
-    </header>
-
-    <main class="page-content">
-      <section class="page-section">
-        <h2 class="page-title">Creative Interests</h2>
-        <p class="page-lead">
-          This section shares the creative hobbies and inspirations that shape how I think, design,
-          and approach the projects I care about.
-        </p>
-      </section>
-    </main>
+      <main class="home-main home-main--inner">
+        <article class="home-content">
+          <p class="home-content__eyebrow">Creative</p>
+          <h1 class="home-content__title">Creative Interests</h1>
+          <p class="home-content__lead">
+            This section shares the creative hobbies and inspirations that shape how I think,
+            design, and approach the projects I care about.
+          </p>
+        </article>
+      </main>
+    </div>
   </body>
 </html>
