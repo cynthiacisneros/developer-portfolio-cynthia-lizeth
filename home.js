@@ -22,11 +22,64 @@ function syncNavActive() {
     });
 }
 
-navItems.forEach((item) => {
-    item.addEventListener("click", () => {
-        navItems.forEach((link) => link.classList.remove("active"));
-        item.classList.add("active");
+function bindNavClick() {
+    navItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            navItems.forEach((link) => link.classList.remove("active"));
+            item.classList.add("active");
+        });
     });
-});
+}
 
-document.addEventListener("DOMContentLoaded", syncNavActive);
+function initSinglePageNav() {
+    const sectionIds = ["hero", "about", "skills", "projects", "contact"];
+
+    function updatePastHero() {
+        const hero = document.getElementById("hero");
+        if (!hero) return;
+        document.body.classList.toggle("past-hero", window.scrollY > hero.offsetHeight - 72);
+    }
+
+    function updateActiveFromScroll() {
+        const headerOffset = 110;
+        let activeIndex = 0;
+        for (let i = sectionIds.length - 1; i >= 0; i--) {
+            const el = document.getElementById(sectionIds[i]);
+            if (!el) continue;
+            if (el.getBoundingClientRect().top <= headerOffset) {
+                activeIndex = i;
+                break;
+            }
+        }
+        navItems.forEach((link, i) => link.classList.toggle("active", i === activeIndex));
+    }
+
+    function onScroll() {
+        updatePastHero();
+        updateActiveFromScroll();
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    bindNavClick();
+
+    const hash = window.location.hash.replace("#", "");
+    if (hash && sectionIds.includes(hash)) {
+        requestAnimationFrame(() => {
+            const el = document.getElementById(hash);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            const idx = sectionIds.indexOf(hash);
+            navItems.forEach((link, i) => link.classList.toggle("active", i === idx));
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.body.classList.contains("page-single")) {
+        initSinglePageNav();
+    } else {
+        syncNavActive();
+        bindNavClick();
+    }
+});
