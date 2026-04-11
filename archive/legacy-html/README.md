@@ -14,7 +14,7 @@ These files are **archived backups** of the old multi-page portfolio. The live s
 
 ## Paths
 
-Asset and stylesheet links use **`../`** so they resolve to the repo root (`home.css`, `style.css`, `about.css`, `home.js`, `images/`). Open via a local server from the **repository root** (e.g. `npx serve .`) and visit `/archive/legacy-html/about.html` if you need to preview an archived page.
+Asset and stylesheet links use **`../`** so they resolve to the repo root (`style.css`, `script.js`, `images/`). Open via a local server from the **repository root** (e.g. `npx serve .`) and visit `/archive/legacy-html/about.html` if you need to preview an archived page.
 
 ## Restoring
 
