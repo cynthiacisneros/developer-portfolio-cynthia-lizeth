@@ -16,56 +16,73 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  setActiveLink("home");
+  function getCurrentSection() {
+    const checkpoint = window.innerHeight * 0.35;
+    let currentId = "home";
+    let smallestDistance = Infinity;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveLink(entry.target.id);
-        }
-      });
-    },
-    {
-      threshold: 0.25,
-      rootMargin: "-20% 0px -55% 0px",
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const distance = Math.abs(rect.top - checkpoint);
+
+      if (rect.top <= checkpoint && rect.bottom >= checkpoint && distance < smallestDistance) {
+        smallestDistance = distance;
+        currentId = section.id;
+      }
+    });
+
+    return currentId;
+  }
+
+  function updateActiveOnScroll() {
+    const currentSection = getCurrentSection();
+    setActiveLink(currentSection);
+
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 20) {
+      setActiveLink("contact");
     }
-  );
+  }
 
-  sections.forEach((section) => observer.observe(section));
+  setActiveLink("home");
+  updateActiveOnScroll();
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       const href = link.getAttribute("href");
-      if (!href || href.charAt(0) !== "#") return;
+      if (!href || !href.startsWith("#")) return;
+
       const id = href.slice(1);
-      if (sectionIds.indexOf(id) === -1) return;
+      if (!sectionIds.includes(id)) return;
+
       const target = document.getElementById(id);
       if (!target) return;
+
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
       if (history.replaceState) {
         history.replaceState(null, "", href);
       }
+
       setActiveLink(id);
     });
   });
 
   const hash = window.location.hash.replace(/^#/, "");
-  if (hash && sectionIds.indexOf(hash) !== -1 && document.getElementById(hash)) {
+  if (hash && sectionIds.includes(hash) && document.getElementById(hash)) {
     requestAnimationFrame(() => {
-      document.getElementById(hash).scrollIntoView({ behavior: "smooth", block: "start" });
+      document.getElementById(hash).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
       setActiveLink(hash);
     });
   }
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 40) {
-        setActiveLink("contact");
-      }
-    },
-    { passive: true }
-  );
+  window.addEventListener("scroll", updateActiveOnScroll, { passive: true });
+  window.addEventListener("resize", updateActiveOnScroll);
 });
