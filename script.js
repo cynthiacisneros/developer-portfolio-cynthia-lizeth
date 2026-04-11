@@ -85,4 +85,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", updateActiveOnScroll, { passive: true });
   window.addEventListener("resize", updateActiveOnScroll);
+
+  const revealItems = document.querySelectorAll("#about .reveal");
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  revealItems.forEach((item) => revealObserver.observe(item));
 });
