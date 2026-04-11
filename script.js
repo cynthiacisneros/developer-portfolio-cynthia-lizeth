@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("main section[id]");
-  const sectionIds = ["home", "about", "skills", "projects", "contact"];
+  const sectionIds = ["home", "about", "gallery", "skills", "projects", "contact"];
 
   function setActiveLink(id) {
     navLinks.forEach((link) => {
@@ -103,4 +103,26 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      galleryItems.forEach((item) => {
+        const category = item.dataset.category;
+
+        if (filter === "all" || category === filter) {
+          item.classList.remove("hide");
+        } else {
+          item.classList.add("hide");
+        }
+      });
+    });
+  });
 });
