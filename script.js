@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach((link) => {
       const isMatch = link.getAttribute("href") === `#${id}`;
       link.classList.toggle("active", isMatch);
+
       if (isMatch) {
         link.setAttribute("aria-current", "page");
       } else {
@@ -19,17 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const observer = new IntersectionObserver(
     (entries) => {
-      const visibleSections = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-      if (visibleSections.length > 0) {
-        setActiveLink(visibleSections[0].target.id);
-      }
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
     },
     {
-      threshold: [0.35, 0.5, 0.7],
-      rootMargin: "-20% 0px -45% 0px",
+      threshold: 0.25,
+      rootMargin: "-20% 0px -55% 0px",
     }
   );
 
