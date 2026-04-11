@@ -3,211 +3,152 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cynthia Lizeth Cisneros — Portfolio</title>
+    <title>Cynthia Lizeth Cisneros | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
   </head>
-  <body class="page-light page-single">
-    <header class="site-header site-header--single">
-      <nav class="nav-menu" aria-label="Primary navigation">
-        <a href="#home" class="nav-item active">Home</a>
-        <a href="#about" class="nav-item">About</a>
-        <a href="#skills" class="nav-item">Skills</a>
-        <a href="#projects" class="nav-item">Projects</a>
-        <a href="#contact" class="nav-item">Contact</a>
+  <body>
+    <header class="site-header">
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </nav>
     </header>
 
-    <main class="single-main">
-      <section id="home" class="hero" aria-label="Home">
-        <p class="hero-label">PORTFOLIO</p>
-        <h1>Cynthia Lizeth<br />Cisneros</h1>
-        <p class="hero-subtext">
-          Frontend developer creating thoughtful, intentional digital experiences.
-        </p>
-        <a href="#projects" class="hero-button">View My Work</a>
+    <main>
+      <section id="home" class="section hero-section">
+        <div class="hero-content">
+          <p class="eyebrow">PORTFOLIO</p>
+          <h1>Cynthia Lizeth Cisneros</h1>
+          <p class="hero-subtext">
+            Frontend developer creating thoughtful, intentional digital
+            experiences.
+          </p>
+          <a class="hero-button" href="#projects">View My Work</a>
+        </div>
       </section>
 
-      <div class="single-page__light">
-        <section id="about" class="single-section" aria-labelledby="about-heading">
-          <div class="home-main home-main--inner home-main--about">
-            <div class="about-feature">
-              <p class="about-feature__label">About me</p>
-              <h2 id="about-heading" class="about-feature__title">
-                Designing with intention, building with heart.
-              </h2>
-              <div class="about-feature__divider" role="presentation"></div>
+      <section id="about" class="section light-section">
+        <div class="container">
+          <p class="eyebrow">ABOUT ME</p>
+          <h2>Designing with intention, building with heart.</h2>
+          <div class="about-grid">
+            <div class="about-image-card">
+              <img
+                src="images/about-portrait.png"
+                alt="Portrait of Cynthia Lizeth Cisneros"
+                width="768"
+                height="1024"
+                loading="lazy"
+              />
+            </div>
 
-              <div class="about-feature__grid">
-                <div class="about-feature__visual">
-                  <div class="about-feature__frame" aria-hidden="true"></div>
-                  <figure class="about-feature__figure">
-                    <div class="about-feature__card">
-                      <img
-                        class="about-feature__img"
-                        src="images/about-portrait.png"
-                        alt="Portrait of Cynthia Lizeth Cisneros, smiling, wearing a black sleeveless top against a light brick wall."
-                        width="768"
-                        height="1024"
-                        loading="lazy"
-                      />
-                    </div>
-                  </figure>
-                </div>
+            <div class="about-text-card">
+              <p>
+                I’m a frontend developer based in Mission, Texas, with a strong
+                love for both technology and thoughtful design. I’m currently
+                pursuing a bachelor’s degree in Computing Applications at Texas
+                Tech University, where I continue to grow my skills in
+                development and digital problem-solving.
+              </p>
 
-                <div class="about-feature__panel">
-                  <div class="about-feature__body">
-                    <p class="about-feature__text">
-                      I’m a frontend developer based in Mission, Texas, with a strong love for both
-                      technology and thoughtful design. I’m currently pursuing a bachelor’s degree in
-                      Computing Applications at Texas Tech University, where I continue to grow my
-                      skills in development and digital problem-solving.
-                    </p>
-                    <p class="about-feature__text">
-                      Outside of tech, I’m a mom, a student, and a working professional—roles that
-                      have shaped the way I approach my work with discipline, empathy, and
-                      adaptability. I’m naturally detail-oriented and reflective, and I enjoy creating
-                      digital experiences that feel intentional, intuitive, and visually refined.
-                    </p>
-                    <p class="about-feature__text">
-                      In my free time, I love exploring creativity through digital art and
-                      photography, baking when I can slow down, and taking trips that allow me to
-                      reset and find inspiration.
-                    </p>
-                  </div>
-                  <div class="about-feature__tags" aria-label="Quick facts">
-                    <span class="about-feature__tag">Frontend</span>
-                    <span class="about-feature__tag">Mission, TX</span>
-                    <span class="about-feature__tag">Texas Tech</span>
-                    <span class="about-feature__tag">Computing Applications</span>
-                  </div>
-                </div>
-              </div>
+              <p>
+                Outside of tech, I’m a mom, a student, and a working
+                professional—roles that have shaped the way I approach my work
+                with discipline, empathy, and adaptability.
+              </p>
+
+              <p>
+                I enjoy digital art, photography, baking, and travel, and I
+                bring that same creativity into the experiences I design and
+                build.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="skills" class="single-section" aria-labelledby="skills-title">
-          <div class="home-main home-main--inner">
-            <article class="home-content">
-              <p class="home-content__eyebrow">Skills</p>
-              <h2 id="skills-title" class="home-content__title">Skills</h2>
-              <p class="home-content__lead">
-                This section highlights the tools, technologies, and strengths I bring to my work,
-                from languages and frameworks to the habits that help me learn and collaborate.
+      <section id="skills" class="section light-section">
+        <div class="container narrow">
+          <p class="eyebrow">SKILLS</p>
+          <h2>Skills</h2>
+          <p class="section-intro">
+            This section highlights the tools, technologies, and strengths I
+            bring to my work, from languages and frameworks to the habits that
+            help me learn and collaborate.
+          </p>
+
+          <div class="card-grid">
+            <article class="info-card">
+              <h3>Languages</h3>
+              <p>HTML, CSS, JavaScript</p>
+            </article>
+            <article class="info-card">
+              <h3>Tools</h3>
+              <p>GitHub, VS Code, Cursor, Figma</p>
+            </article>
+            <article class="info-card">
+              <h3>Strengths</h3>
+              <p>Responsive design, visual hierarchy, clean UI, detail-oriented work</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section light-section">
+        <div class="container narrow">
+          <p class="eyebrow">WORK</p>
+          <h2>Projects</h2>
+          <p class="section-intro">
+            This section showcases work I have built or contributed to, with a
+            focus on thoughtful design and user-friendly experiences.
+          </p>
+
+          <div class="card-grid">
+            <article class="info-card">
+              <h3>Okay, Period!</h3>
+              <p>
+                A period education website designed to feel approachable,
+                encouraging, and less clinical for girls and teens.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <h3>Portfolio Website</h3>
+              <p>
+                A personal portfolio focused on elegant design, intentional
+                layout, and a refined frontend presentation.
               </p>
             </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="projects" class="single-section" aria-labelledby="projects-title">
-          <div class="home-main home-main--inner">
-            <article class="home-content home-content--tight-bottom">
-              <p class="home-content__eyebrow">Work</p>
-              <h2 id="projects-title" class="home-content__title">Projects</h2>
-              <p class="home-content__lead">
-                This section showcases work I have built or contributed to, what I learned along the
-                way, and how I applied my skills to solve real problems.
-              </p>
-            </article>
+      <section id="contact" class="section light-section contact-section">
+        <div class="container narrow">
+          <p class="eyebrow">CONTACT</p>
+          <h2>Let’s connect</h2>
+          <p class="section-intro">
+            I’m always excited to keep learning, growing, and creating thoughtful digital work.
+          </p>
 
-            <section class="projects-gallery" aria-label="Project gallery">
-              <div class="project-grid">
-                <article class="project-card">
-                  <span class="project-card__category">HTML/CSS</span>
-                  <h3 class="project-card__title">Personal developer portfolio</h3>
-                  <p class="project-card__desc">
-                    Work across this multi-page portfolio and related coursework emphasizes semantic
-                    structure, shared styles, navigation, and hosted projects built with HTML and CSS.
-                  </p>
-                  <div class="project-card__links">
-                    <a
-                      class="project-card__link"
-                      href="https://github.com/cynthiacisneros/CMPA-3304-D01"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub: CMPA-3304-D01</a>
-                    <a
-                      class="project-card__link project-card__link--secondary"
-                      href="https://github.com/cynthiacisneros/CMPA-3301-D01-Project-03"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub: Melon Heart (Project 03)</a>
-                    <a
-                      class="project-card__link project-card__link--secondary"
-                      href="https://github.com/cynthiacisneros/cynthiacisneros.github.io"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub: cynthiacisneros.github.io</a>
-                  </div>
-                </article>
-
-                <article class="project-card">
-                  <span class="project-card__category">UI/UX</span>
-                  <h3 class="project-card__title">Portfolio interface and experience</h3>
-                  <p class="project-card__desc">
-                    Interface and experience design through this site’s visual system and interactive
-                    Figma prototypes: product flows, layout, and design decisions for real app
-                    concepts.
-                  </p>
-                  <div class="project-card__links">
-                    <a
-                      class="project-card__link"
-                      href="https://www.figma.com/proto/tcnXvxOql4MYo92ffZu80k/FuelPay?node-id=0-1&amp;t=vfcK2ZIZciH1n6Xp-1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Figma: FuelPay</a>
-                    <a
-                      class="project-card__link project-card__link--secondary"
-                      href="https://www.figma.com/proto/52bpewnXMWjqhCtBOieQTi/Group--1_FinalProject_LocalPulseCommunityEventsApp?node-id=0-1&amp;t=sYaMfUJbunjFYqx8-1"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Figma: LocalPulse</a>
-                  </div>
-                </article>
-
-                <article class="project-card">
-                  <span class="project-card__category">Methods of Information</span>
-                  <h3 class="project-card__title">Organizing and presenting information</h3>
-                  <p class="project-card__desc">
-                    Coursework applying methods of information: how content is structured, labeled,
-                    and connected so audiences can find what they need—aligned with clear hierarchy
-                    and navigation across this portfolio.
-                  </p>
-                  <div class="project-card__links">
-                    <a
-                      class="project-card__link"
-                      href="https://spring-xenon-c38.notion.site/Parent-Resource-Guide-for-Autism-315e01762ccd8020ae37e9fc51f65d75"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Notion: Parent Resource Guide</a>
-                  </div>
-                </article>
-              </div>
-            </section>
+          <div class="info-card contact-card">
+            <p>Email: your-email@example.com</p>
+            <p>GitHub: github.com/yourusername</p>
+            <p>LinkedIn: linkedin.com/in/yourusername</p>
           </div>
-        </section>
-
-        <section id="contact" class="single-section" aria-labelledby="contact-title">
-          <div class="home-main home-main--inner">
-            <article class="home-content">
-              <p class="home-content__eyebrow">Contact</p>
-              <h2 id="contact-title" class="home-content__title">Contact</h2>
-              <p class="home-content__lead">
-                This section is where you can reach out to me and find links to my email, social
-                profiles, or other places I share my work.
-              </p>
-            </article>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
 
+    <script src="script.js"></script>
   </body>
 </html>
