@@ -219,6 +219,15 @@ h3 {
   padding: 36px;
 }
 
+.about-text-card p {
+  margin: 0 0 1.25rem;
+  color: var(--text-dark);
+}
+
+.about-text-card p:last-child {
+  margin-bottom: 0;
+}
+
 .card-grid {
   margin-top: 42px;
   display: grid;
@@ -229,6 +238,57 @@ h3 {
 .info-card {
   padding: 28px;
   text-align: left;
+}
+
+.info-card--project {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.info-card--project > p {
+  margin: 0;
+  flex-grow: 1;
+  color: var(--muted-light);
+}
+
+.info-card__actions {
+  margin-top: 1.35rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 10px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-1px);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+  border-color: rgba(29, 27, 25, 0.12);
+}
+
+.card-link:focus-visible {
+  outline: 2px solid rgba(29, 27, 25, 0.35);
+  outline-offset: 2px;
 }
 
 .contact-section {
