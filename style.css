@@ -192,15 +192,23 @@ h3 {
   text-align: center;
 }
 
-.about-grid {
+.about-content {
   margin-top: 48px;
-  display: grid;
-  grid-template-columns: 0.72fr 1.28fr;
-  gap: 28px;
-  align-items: start;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.about-content .about-text-card,
+.about-content .info-card {
+  margin-top: 0;
+  align-self: flex-start;
+  max-width: 540px;
 }
 
 .about-image-card,
@@ -222,6 +230,21 @@ h3 {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
+}
+
+.about-content .about-image-card {
+  max-width: 260px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.about-content .about-image-card img {
+  width: 260px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
   object-fit: cover;
 }
 
@@ -387,8 +410,9 @@ h3 {
 }
 
 @media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
+  .about-content {
+    flex-direction: column;
+    align-items: center;
     max-width: 620px;
   }
 
