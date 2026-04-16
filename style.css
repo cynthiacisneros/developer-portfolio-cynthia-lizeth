@@ -227,6 +227,20 @@ h3 {
   width: 100%;
 }
 
+.about-layout__column h2:has(+ h3) {
+  margin-bottom: 0;
+}
+
+.about h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 8px;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
 .about-image-card,
 .about-text-card {
   background: rgba(255, 255, 255, 0.55);
