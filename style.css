@@ -98,9 +98,12 @@ img {
   display: grid;
   place-items: center;
   padding: 80px 24px;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 30%), #050505;
   color: var(--text-light);
   text-align: center;
+}
+
+.hero {
+  background: radial-gradient(circle at center, #111 0%, #000 70%);
 }
 
 .hero-content {
