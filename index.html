@@ -11,17 +11,40 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("portfolio-theme");
+          if (t === "dark" || t === "light") {
+            document.documentElement.setAttribute("data-theme", t);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <header class="site-header">
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a class="nav-link active" href="#home">Home</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#gallery">Gallery</a>
-        <a class="nav-link" href="#skills">Skills</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#contact">Contact</a>
-      </nav>
+      <div class="header-inner">
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a class="nav-link active" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#gallery">Gallery</a>
+          <a class="nav-link" href="#skills">Skills</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch to dark theme"
+          title="Toggle light or dark theme"
+        >
+          <span class="theme-toggle__track" aria-hidden="true">
+            <span class="theme-toggle__thumb"></span>
+          </span>
+        </button>
+      </div>
     </header>
 
     <main>
@@ -175,60 +198,88 @@
         </div>
       </section>
 
-      <section id="projects" class="section light-section">
+      <section id="projects" class="section light-section section--projects">
         <div class="container narrow">
           <p class="eyebrow">WORK</p>
           <h2>Projects</h2>
           <p class="section-intro">
-            This section showcases work I have built or contributed to, with a
-            focus on thoughtful design and user-friendly experiences.
+            Selected work spanning interactive prototypes, structured content, and
+            shipped frontend pages—built with clarity and care for the people using them.
           </p>
 
-          <div class="card-grid card-grid--projects">
-            <article class="info-card info-card--project">
-              <h3>Fuel Pay Project</h3>
-              <p>
-                A project focused on a fuel pay experience and frontend structure.
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-card__top">
+                <h3 class="project-card__title">Fuel Pay</h3>
+                <ul class="project-card__tags" aria-label="Tech stack">
+                  <li><span class="project-tag">Figma</span></li>
+                  <li><span class="project-tag">UI design</span></li>
+                  <li><span class="project-tag">Prototyping</span></li>
+                </ul>
+              </div>
+              <p class="project-card__desc">
+                An interactive payment-flow prototype for a fuel checkout experience,
+                focused on clear steps, trust, and a calm visual hierarchy for mobile users.
               </p>
-              <div class="info-card__actions">
+              <div class="project-card__actions">
                 <a
-                  class="card-link"
+                  class="project-link project-link--primary"
                   href="https://www.figma.com/proto/tcnXvxOql4MYo92ffZu80k/FuelPay?node-id=0-1&amp;t=RyZoRJUuUsLrwIjh-1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Figma File</a>
+                  >View prototype</a>
               </div>
             </article>
 
-            <article class="info-card info-card--project">
-              <h3>Parent Resource Guide</h3>
-              <p>
-                A parent resource guide created in Notion to organize and share helpful
-                information in a clear and accessible way.
+            <article class="project-card">
+              <div class="project-card__top">
+                <h3 class="project-card__title">Parent Resource Guide</h3>
+                <ul class="project-card__tags" aria-label="Tech stack">
+                  <li><span class="project-tag">Notion</span></li>
+                  <li><span class="project-tag">Content design</span></li>
+                  <li><span class="project-tag">Accessibility</span></li>
+                </ul>
+              </div>
+              <p class="project-card__desc">
+                A structured Notion guide that organizes supportive resources for families
+                in one navigable place—written for clarity, scanability, and real-world use.
               </p>
-              <div class="info-card__actions">
+              <div class="project-card__actions">
                 <a
-                  class="card-link"
+                  class="project-link project-link--primary"
                   href="https://spring-xenon-c38.notion.site/Parent-Resource-Guide-for-Autism-315e01762ccd8020ae37e9fc51f65d75"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View Notion Guide</a>
+                  >View resource</a>
               </div>
             </article>
 
-            <article class="info-card info-card--project">
-              <h3>HTML Projects on GitHub</h3>
-              <p>
-                A collection of HTML-based projects published through GitHub, showing my
-                progress in frontend structure, layout, and styling.
+            <article class="project-card">
+              <div class="project-card__top">
+                <h3 class="project-card__title">Course HTML projects</h3>
+                <ul class="project-card__tags" aria-label="Tech stack">
+                  <li><span class="project-tag">HTML</span></li>
+                  <li><span class="project-tag">CSS</span></li>
+                  <li><span class="project-tag">GitHub Pages</span></li>
+                </ul>
+              </div>
+              <p class="project-card__desc">
+                A set of coursework pages published on GitHub Pages—practice in semantic
+                markup, responsive layout, and polishing UI details in the browser.
               </p>
-              <div class="info-card__actions">
+              <div class="project-card__actions">
                 <a
-                  class="card-link"
+                  class="project-link project-link--primary"
                   href="https://cynthiacisneros.github.io/CMPA-3304-D01/project-02/index.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View GitHub</a>
+                  >Live demo</a>
+                <a
+                  class="project-link project-link--secondary"
+                  href="https://github.com/cynthiacisneros/CMPA-3304-D01"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code</a>
               </div>
             </article>
           </div>
@@ -244,21 +295,19 @@
           </p>
 
           <div class="info-card contact-card">
-         <p>
-         Email: 
-         <a href="mailto:lizcortina01@gmail.com">lizcortina01@gmail.com</a>
-        </p>
-
-        <p>
-         LinkedIn: 
-         <a href="https://www.linkedin.com/in/cynthia-lizeth-cisneros-6b3ab3338/" target="_blank">
-          LinkedIn
-    </a>
-  </p>
-
-    </a>
-  </p>
-</div>
+            <p>
+              Email:
+              <a href="mailto:lizcortina01@gmail.com">lizcortina01@gmail.com</a>
+            </p>
+            <p>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/cynthia-lizeth-cisneros-6b3ab3338/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Profile</a>
+            </p>
+          </div>
         </div>
       </section>
     </main>

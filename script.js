@@ -1,4 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const THEME_KEY = "portfolio-theme";
+
+  function syncThemeToggleAria() {
+    const toggle = document.getElementById("theme-toggle");
+    if (!toggle) return;
+    const mode = document.documentElement.getAttribute("data-theme") || "light";
+    toggle.setAttribute(
+      "aria-label",
+      mode === "dark" ? "Switch to light theme" : "Switch to dark theme"
+    );
+  }
+
+  if (!document.documentElement.getAttribute("data-theme")) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+  syncThemeToggleAria();
+
+  document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem(THEME_KEY, next);
+    } catch (e) {
+      /* ignore */
+    }
+    syncThemeToggleAria();
+  });
+
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("main section[id]");
   const sectionIds = ["home", "about", "gallery", "skills", "projects", "contact"];
