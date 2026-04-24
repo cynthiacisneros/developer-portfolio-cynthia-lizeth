@@ -11,40 +11,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("portfolio-theme");
-          if (t === "dark" || t === "light") {
-            document.documentElement.setAttribute("data-theme", t);
-          }
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body>
     <header class="site-header">
-      <div class="header-inner">
-        <nav class="main-nav" aria-label="Primary navigation">
-          <a class="nav-link active" href="#home">Home</a>
-          <a class="nav-link" href="#about">About</a>
-          <a class="nav-link" href="#gallery">Gallery</a>
-          <a class="nav-link" href="#skills">Skills</a>
-          <a class="nav-link" href="#projects">Projects</a>
-          <a class="nav-link" href="#contact">Contact</a>
-        </nav>
-        <button
-          type="button"
-          class="theme-toggle"
-          id="theme-toggle"
-          aria-label="Switch to dark theme"
-          title="Toggle light or dark theme"
-        >
-          <span class="theme-toggle__track" aria-hidden="true">
-            <span class="theme-toggle__thumb"></span>
-          </span>
-        </button>
-      </div>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
     </header>
 
     <main>
@@ -227,7 +204,13 @@
                   href="https://www.figma.com/proto/tcnXvxOql4MYo92ffZu80k/FuelPay?node-id=0-1&amp;t=RyZoRJUuUsLrwIjh-1"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View prototype</a>
+                  >Live demo</a>
+                <a
+                  class="project-link project-link--secondary"
+                  href="https://github.com/cynthiacisneros"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a>
               </div>
             </article>
 
@@ -250,7 +233,13 @@
                   href="https://spring-xenon-c38.notion.site/Parent-Resource-Guide-for-Autism-315e01762ccd8020ae37e9fc51f65d75"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >View resource</a>
+                  >Live demo</a>
+                <a
+                  class="project-link project-link--secondary"
+                  href="https://github.com/cynthiacisneros"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub</a>
               </div>
             </article>
 
@@ -279,7 +268,7 @@
                   href="https://github.com/cynthiacisneros/CMPA-3304-D01"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Source code</a>
+                  >Code</a>
               </div>
             </article>
           </div>
