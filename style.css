@@ -740,6 +740,30 @@ h3 {
   margin: 0;
 }
 
+/* What Inspires Me — same hierarchy and dark treatment as Skills */
+#inspires.inspires-section {
+  background:
+    radial-gradient(circle at 22% 28%, rgba(255, 255, 255, 0.07), transparent 42%),
+    radial-gradient(circle at 78% 72%, rgba(255, 255, 255, 0.05), transparent 52%),
+    #141416;
+  color: rgba(244, 244, 242, 0.92);
+  padding: 6rem 24px;
+}
+
+#inspires .eyebrow {
+  color: rgba(244, 244, 242, 0.74);
+}
+
+#inspires h2 {
+  color: #ffffff;
+}
+
+#inspires.inspires-section .section-intro {
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .section--projects-showcase {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.028) 0%, transparent 45%),
