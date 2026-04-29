@@ -73,8 +73,9 @@ section::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
   height: 1px;
   background: linear-gradient(
     to right,
@@ -86,16 +87,53 @@ section::before {
   z-index: 1;
 }
 
+.light-section::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(29, 27, 25, 0.065),
+    transparent
+  );
+}
+
+main > section:first-of-type::before {
+  content: none;
+}
+
+main > section:not(.hero-section) {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-dark {
+  background: #0b0b0b;
+}
+
+.section-soft {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.04), transparent 40%),
+    #0b0b0b;
+}
+
 .section {
   scroll-margin-top: 140px;
 }
 
 .section-fade {
-  height: 80px;
+  position: relative;
+  height: 64px;
   pointer-events: none;
-  background:
-    linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6)),
-    #050505;
+  flex-shrink: 0;
+}
+
+.section-fade::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, #0b0b0b);
 }
 
 #home.section {
@@ -456,7 +494,6 @@ h3 {
 .light-section {
   background: var(--bg-light);
   color: var(--text-dark);
-  padding: 6rem 24px;
 }
 
 .container {
@@ -482,7 +519,7 @@ h3 {
 #about.about-section .about-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 7rem 2rem;
+  padding: 6rem 2rem;
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
   gap: 5rem;
@@ -693,7 +730,6 @@ h3 {
     radial-gradient(circle at 78% 72%, rgba(255, 255, 255, 0.05), transparent 52%),
     #141416;
   color: rgba(244, 244, 242, 0.92);
-  padding: 6rem 24px;
 }
 
 #skills .eyebrow {
@@ -768,7 +804,6 @@ h3 {
     radial-gradient(circle at 78% 72%, rgba(255, 255, 255, 0.05), transparent 52%),
     #141416;
   color: rgba(244, 244, 242, 0.92);
-  padding: 6rem 24px;
 }
 
 #inspires .eyebrow {
@@ -854,22 +889,14 @@ h3 {
   opacity: 1;
 }
 
-.section--projects-showcase {
+.section--projects-showcase.section-soft {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.028) 0%, transparent 45%),
-    radial-gradient(
-      circle at 20% 30%,
-      rgba(255, 255, 255, 0.07),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 80% 70%,
-      rgba(255, 255, 255, 0.045),
-      transparent 50%
-    ),
-    linear-gradient(180deg, #070708 0%, #0b0b0d 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.022) 0%, transparent 44%),
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.04), transparent 40%),
+    radial-gradient(circle at 18% 30%, rgba(255, 255, 255, 0.055), transparent 38%),
+    radial-gradient(circle at 82% 72%, rgba(255, 255, 255, 0.038), transparent 50%),
+    #0b0b0b;
   color: rgba(244, 244, 242, 0.92);
-  padding: 6rem 24px;
 }
 
 .section--projects-showcase .eyebrow {
@@ -1518,8 +1545,8 @@ h3 {
 }
 
 /* Contact: confident closing — split layout, no card */
-#contact.contact-section {
-  padding: 8rem 2rem;
+#contact.contact-section.section-dark {
+  padding: 6rem 2rem;
   background:
     radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.06), transparent 35%),
     #0b0b0b;
@@ -1530,9 +1557,13 @@ h3 {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 4rem;
   align-items: center;
+}
+
+#contact.contact-section .contact-copy {
+  max-width: 600px;
 }
 
 #contact.contact-section .section-label {
@@ -1545,20 +1576,23 @@ h3 {
 
 #contact.contact-section .contact-copy h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 6vw, 5.5rem);
-  line-height: 0.95;
+  font-size: clamp(3rem, 5vw, 4.75rem);
+  line-height: 1.05;
+  max-width: 560px;
   color: #ffffff;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 1.25rem;
+  margin: 0;
 }
 
+#contact.contact-section .contact-copy .contact-subtext,
 #contact.contact-section .contact-copy p:not(.section-label) {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  max-width: 460px;
+  font-size: 1.05rem;
   line-height: 1.7;
-  margin: 0;
-  max-width: 36rem;
+  margin-bottom: 0;
 }
 
 #contact.contact-section .contact-links {
@@ -1616,7 +1650,7 @@ h3 {
 }
 
 @media (max-width: 768px) {
-  #contact.contact-section {
+  #contact.contact-section.section-dark {
     padding: 5.5rem 1.5rem;
   }
 
@@ -1690,13 +1724,17 @@ h3 {
     font-size: 0.92rem;
   }
 
-  .hero-section,
-  .light-section {
+  .hero-section {
     padding-left: 18px;
     padding-right: 18px;
   }
 
-  #contact.contact-section {
+  main > section:not(.hero-section) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  #contact.contact-section.section-dark {
     padding-left: max(1.25rem, 18px);
     padding-right: max(1.25rem, 18px);
   }
