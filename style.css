@@ -850,27 +850,53 @@ h3 {
   box-shadow: 0 28px 52px rgba(0, 0, 0, 0.48);
 }
 
-.support-project-card__media {
-  height: 220px;
+/* Dark preview frame for support row screenshots (home showcase only) */
+.section--projects-showcase .project-preview {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+  border-radius: 18px;
+  padding: 1rem;
+  height: 260px;
   overflow: hidden;
-  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   flex-shrink: 0;
-  background: rgba(0, 0, 0, 0.25);
 }
 
-.support-project-card__img {
+.section--projects-showcase .project-preview::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.35)
+  );
+  pointer-events: none;
+  border-radius: 18px;
+}
+
+.section--projects-showcase .project-preview img {
+  position: relative;
+  z-index: 0;
   width: 100%;
-  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
   object-fit: cover;
   object-position: top center;
-  border-radius: 16px;
+  border-radius: 12px;
+  filter: grayscale(20%) brightness(0.75) contrast(1.05);
+  opacity: 0.9;
   display: block;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.support-project-card:hover .support-project-card__img,
-.support-project-card:focus-within .support-project-card__img {
-  transform: scale(1.02);
+.section--projects-showcase .support-project-card:hover .project-preview img,
+.section--projects-showcase .support-project-card:focus-within .project-preview img {
+  transform: scale(1.03);
 }
 
 .support-project-card__body {
@@ -1103,7 +1129,7 @@ h3 {
 @media (prefers-reduced-motion: reduce) {
   .project-card__image,
   .featured-image img,
-  .support-project-card__img,
+  .section--projects-showcase .project-preview img,
   .project-card__hover,
   .project-card,
   .featured-project,
@@ -1114,8 +1140,8 @@ h3 {
   .project-card--visual:hover .project-card__image,
   .project-card--visual:focus-within .project-card__image,
   .featured-project:hover .featured-image img,
-  .support-project-card:hover .support-project-card__img,
-  .support-project-card:focus-within .support-project-card__img {
+  .section--projects-showcase .support-project-card:hover .project-preview img,
+  .section--projects-showcase .support-project-card:focus-within .project-preview img {
     transform: none;
   }
 
