@@ -104,12 +104,18 @@ img {
 
 .hero {
   background:
-    linear-gradient(90deg, rgba(6, 6, 6, 0.965) 0%, rgba(6, 6, 6, 0.88) 52%, rgba(6, 6, 6, 0.58) 100%),
-    radial-gradient(ellipse 90% 70% at 68% 46%, rgba(28, 28, 28, 0.62) 0%, rgba(0, 0, 0, 0) 62%),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.56) 28%,
+      rgba(0, 0, 0, 0.3) 62%,
+      rgba(0, 0, 0, 0.06) 100%
+    ),
+    radial-gradient(ellipse 88% 68% at 70% 44%, rgba(34, 34, 34, 0.3) 0%, rgba(0, 0, 0, 0) 62%),
     url("assets/images/cynthia-hero-portrait.png");
   background-size: cover;
   background-position: 80% 35%;
   background-repeat: no-repeat;
+  background-color: #090909;
 }
 
 .hero--split {
@@ -235,11 +241,11 @@ img {
 
   .hero {
     background:
-      linear-gradient(180deg, rgba(6, 6, 6, 0.92) 0%, rgba(6, 6, 6, 0.82) 58%, rgba(6, 6, 6, 0.62) 100%),
-      radial-gradient(ellipse 100% 70% at 50% 28%, rgba(28, 28, 28, 0.5) 0%, rgba(0, 0, 0, 0) 62%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.42) 58%, rgba(0, 0, 0, 0.2) 100%),
+      radial-gradient(ellipse 100% 70% at 52% 30%, rgba(34, 34, 34, 0.24) 0%, rgba(0, 0, 0, 0) 64%),
       url("assets/images/cynthia-hero-portrait.png");
     background-size: cover;
-    background-position: 60% 30%;
+    background-position: 64% 30%;
   }
 
   .hero-split__text {
