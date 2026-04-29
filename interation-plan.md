@@ -4,7 +4,7 @@
 
 Overall, my Project 01 has a solid foundation. The structure of the site is clear, and the main pages function as intended. I also think the overall design direction works well—the soft, minimal aesthetic feels cohesive and appropriate for the audience I had in mind. Some sections, especially those meant to guide or inform the user, feel intentional and well thought out.
 
-However, there are areas that need improvement. The About Me section feels a bit weak in terms of writing and structure. The paragraphing could be stronger, and the content does not communicate as clearly or confidently as I would like. It doesn’t fully reflect who I am or what I want the user to take away from it. I also think the photos section may not be necessary. Right now, it doesn’t add much value to the experience and feels more like extra content rather than something purposeful.
+However, there are areas that need improvement. The About Me section feels a bit weak in terms of writing and structure. The paragraph structure could be stronger, and the content does not communicate as clearly or confidently as I would like. It doesn’t fully reflect who I am or what I want the user to take away from it. I also think the photos section may not be necessary. Right now, it doesn’t add much value to the experience and feels more like extra content rather than something purposeful.
 
 In addition, there are some layout issues throughout the site. Certain sections feel too boxed in, and spacing is not always consistent, which affects the overall flow. There are also small inconsistencies in headings and formatting across pages.
 
