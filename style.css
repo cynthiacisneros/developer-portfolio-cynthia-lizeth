@@ -132,22 +132,23 @@ img {
 }
 
 .hero-split__text {
-  max-width: 40rem;
+  max-width: 46rem;
 }
 
 .hero-tagline {
-  margin: 0 0 1.25rem;
-  font-size: clamp(1.05rem, 2.1vw, 1.2rem);
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  margin: 0 0 1.4rem;
+  font-size: clamp(0.98rem, 1.3vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: rgba(244, 244, 242, 0.92);
 }
 
 .hero-lede {
-  margin: 0 0 2rem;
-  max-width: 32rem;
-  font-size: clamp(1rem, 1.35vw, 1.08rem);
-  line-height: 1.75;
+  margin: 0 0 2.3rem;
+  max-width: 420px;
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+  line-height: 1.6;
   font-weight: 400;
   color: rgba(210, 210, 206, 0.88);
 }
@@ -155,7 +156,7 @@ img {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
 }
 
@@ -163,10 +164,10 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 13px 22px;
+  min-height: 52px;
+  padding: 15px 28px;
   border-radius: 999px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.02em;
   text-decoration: none;
@@ -253,6 +254,15 @@ img {
     text-align: center;
   }
 
+  h1.hero-heading {
+    font-size: clamp(2.8rem, 12vw, 4.6rem);
+    line-height: 0.96;
+  }
+
+  .hero-tagline {
+    letter-spacing: 0.11em;
+  }
+
   .hero-actions {
     justify-content: center;
   }
@@ -286,11 +296,11 @@ h1 {
 h1.hero-heading {
   font-family: "Cormorant Garamond", serif;
   font-weight: 700;
-  font-size: clamp(2.75rem, 6.5vw, 4.75rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
   color: #ffffff;
-  margin: 0 0 1rem;
+  margin: 0 0 1.15rem;
 }
 
 h2 {
