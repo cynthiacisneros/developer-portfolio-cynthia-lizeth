@@ -144,6 +144,15 @@ img {
   color: rgba(244, 244, 242, 0.92);
 }
 
+.hero-tagline::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 16px 0;
+}
+
 .hero-lede {
   margin: 0 0 2.3rem;
   max-width: 420px;
@@ -295,11 +304,12 @@ h1 {
 
 h1.hero-heading {
   font-family: "Cormorant Garamond", serif;
-  font-weight: 700;
+  font-weight: 800;
   font-size: clamp(3.5rem, 8vw, 7rem);
-  line-height: 0.94;
-  letter-spacing: -0.045em;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
   color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   margin: 0 0 1.15rem;
 }
 
