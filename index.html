@@ -11,6 +11,12 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="images/project-fuelpay-real.webp"
+      type="image/webp"
+    />
   </head>
   <body>
     <header class="site-header">
@@ -51,13 +57,20 @@
             A collection of projects focused on clean interfaces, thoughtful user experiences, and purposeful design.
           </p>
 
-          <article class="featured-project" data-tilt>
+          <article class="featured-project">
             <div class="featured-project__media">
-              <img
-                src="images/project-fuelpay-real.jpg"
-                alt="FuelPay app concept preview showing a mobile-first payment flow"
-                loading="lazy"
-              />
+              <picture>
+                <source type="image/webp" srcset="images/project-fuelpay-real.webp" />
+                <img
+                  src="images/project-fuelpay-real.jpg"
+                  alt="FuelPay app concept preview showing a mobile-first payment flow"
+                  width="1200"
+                  height="1200"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
             </div>
             <div class="featured-project__content">
               <p class="featured-project__label">Featured Project</p>
@@ -98,14 +111,20 @@
           </article>
 
           <div class="projects-support-grid">
-            <article class="project-card project-card--visual project-card--compact" data-tilt>
+            <article class="project-card project-card--visual project-card--compact">
               <div class="project-card__frame project-card__frame--artboard">
-                <img
-                  class="project-card__image"
-                  src="images/project-parent-guide-real.jpg"
-                  alt="Parent Resource Guide: organized content layout preview"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/project-parent-guide-real.webp" />
+                  <img
+                    class="project-card__image"
+                    src="images/project-parent-guide-real.jpg"
+                    alt="Parent Resource Guide: organized content layout preview"
+                    width="1200"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="project-card__overlay" aria-hidden="true"></div>
                 <div class="project-card__hover">
                   <div class="project-card__meta">
@@ -139,14 +158,20 @@
               </div>
             </article>
 
-            <article class="project-card project-card--visual project-card--compact" data-tilt>
+            <article class="project-card project-card--visual project-card--compact">
               <div class="project-card__frame project-card__frame--artboard">
-                <img
-                  class="project-card__image"
-                  src="images/project-html-pages-real.jpg"
-                  alt="Course HTML projects: responsive page previews"
-                  loading="lazy"
-                />
+                <picture>
+                  <source type="image/webp" srcset="images/project-html-pages-real.webp" />
+                  <img
+                    class="project-card__image"
+                    src="images/project-html-pages-real.jpg"
+                    alt="Course HTML projects: responsive page previews"
+                    width="1200"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
                 <div class="project-card__overlay" aria-hidden="true"></div>
                 <div class="project-card__hover">
                   <div class="project-card__meta">

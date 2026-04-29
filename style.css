@@ -687,18 +687,12 @@ h3 {
   box-shadow:
     var(--project-elevated-shadow),
     0 0 0 1px rgba(255, 255, 255, 0.07);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .featured-project:hover {
   transform: translateY(-4px);
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow:
-    var(--project-elevated-shadow-hover),
-    0 0 0 1px rgba(255, 255, 255, 0.09);
 }
 
 .featured-project__media {
@@ -708,6 +702,13 @@ h3 {
   aspect-ratio: var(--project-media-aspect);
   background: linear-gradient(145deg, #1a1c22 0%, #0d0d0d 100%);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  contain: paint;
+}
+
+.featured-project__media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .featured-project__media::after {
@@ -726,11 +727,14 @@ h3 {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.55s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform 0.25s ease;
 }
 
 .featured-project:hover .featured-project__media img {
-  transform: scale(1.04);
+  transform: translateZ(0) scale(1.03);
 }
 
 .featured-project__content {
@@ -827,11 +831,7 @@ h3 {
   border: var(--project-shell-border);
   background: var(--project-shell-bg);
   box-shadow: var(--project-elevated-shadow);
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease,
-    background 0.35s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .section--projects-showcase .project-card--visual.project-card--compact:hover,
@@ -840,7 +840,7 @@ h3 {
 .section--projects .project-card--visual:focus-within {
   transform: translateY(-4px);
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: var(--project-elevated-shadow-hover);
+  box-shadow: var(--project-elevated-shadow);
   background: var(--project-shell-bg);
 }
 
@@ -878,7 +878,6 @@ h3 {
 .project-card--visual {
   padding: 0;
   overflow: hidden;
-  transform-style: preserve-3d;
 }
 
 .project-card--visual .project-card__frame {
@@ -887,6 +886,13 @@ h3 {
   border-radius: var(--project-media-radius);
   background: rgba(255, 255, 255, 0.8);
   aspect-ratio: var(--project-media-aspect);
+  contain: paint;
+}
+
+.project-card--visual .project-card__frame picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* Persistent tone + unify overlay (all project thumbnails) */
@@ -909,7 +915,6 @@ h3 {
 
 .project-card__frame--artboard .project-card__image {
   opacity: 0.9;
-  filter: brightness(0.88) saturate(0.82) contrast(1.02);
   object-position: center top;
 }
 
@@ -927,11 +932,10 @@ h3 {
   height: 100%;
   object-fit: cover;
   display: block;
-  transform: scale(1);
-  transition:
-    transform 0.55s ease,
-    opacity 0.45s ease,
-    filter 0.45s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: transform 0.25s ease;
 }
 
 .project-card__overlay {
@@ -941,7 +945,7 @@ h3 {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.38) 76%, rgba(0, 0, 0, 0.54) 100%);
   opacity: 0;
-  transition: opacity 0.45s ease;
+  transition: opacity 0.2s ease;
 }
 
 .project-card__hover {
@@ -954,8 +958,7 @@ h3 {
   gap: 14px;
   align-content: end;
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.2s ease;
 }
 
 .project-card__meta {
@@ -1005,7 +1008,7 @@ h3 {
 
 .project-card--visual:hover .project-card__image,
 .project-card--visual:focus-within .project-card__image {
-  transform: scale(1.05);
+  transform: translateZ(0) scale(1.03);
 }
 
 .project-card--visual:hover .project-card__overlay,
@@ -1016,7 +1019,6 @@ h3 {
 .project-card--visual:hover .project-card__hover,
 .project-card--visual:focus-within .project-card__hover {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .project-card--visual.tilt-active {
@@ -1029,9 +1031,11 @@ h3 {
 
 @media (prefers-reduced-motion: reduce) {
   .project-card__image,
+  .featured-project__media img,
   .project-card__overlay,
   .project-card__hover,
-  .project-card {
+  .project-card,
+  .featured-project {
     transition: none !important;
   }
 
@@ -1047,7 +1051,6 @@ h3 {
 
   .project-card__hover {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
