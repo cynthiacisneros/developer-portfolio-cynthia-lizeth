@@ -1008,11 +1008,6 @@ h3 {
   transform: scale(1.05);
 }
 
-.project-card__frame--artboard:hover .project-card__image,
-.project-card__frame--artboard:focus-within .project-card__image {
-  filter: brightness(0.92) saturate(0.88) contrast(1.02);
-}
-
 .project-card--visual:hover .project-card__overlay,
 .project-card--visual:focus-within .project-card__overlay {
   opacity: 1;
