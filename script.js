@@ -129,21 +129,32 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", updateActiveOnScroll, { passive: true });
   window.addEventListener("resize", updateActiveOnScroll);
 
-  const revealItems = document.querySelectorAll("#about .reveal");
+  function initScrollReveals() {
+    const sections = document.querySelectorAll("main section.scroll-reveal");
+    if (!sections.length) return;
 
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("reveal-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      sections.forEach((el) => el.classList.add("scroll-reveal--visible"));
+      return;
     }
-  );
 
-  revealItems.forEach((item) => revealObserver.observe(item));
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-reveal--visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -32px 0px",
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  }
+
+  initScrollReveals();
 });
