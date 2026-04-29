@@ -413,6 +413,144 @@ h3 {
   background: #ffffff;
 }
 
+.project-card--visual {
+  padding: 0;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.project-card--visual .project-card__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.8);
+  aspect-ratio: 4 / 3;
+}
+
+.project-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.55s ease;
+}
+
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.55) 78%, rgba(0, 0, 0, 0.72) 100%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.project-card__hover {
+  position: absolute;
+  inset: 0;
+  padding: 22px;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  gap: 14px;
+  align-content: end;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.project-card__meta {
+  align-self: end;
+}
+
+.project-card--visual .project-card__title {
+  color: rgba(255, 255, 255, 0.96);
+  margin-bottom: 10px;
+  text-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+}
+
+.project-card--visual .project-card__desc {
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 38ch;
+}
+
+.project-card--visual .project-card__tags {
+  gap: 10px;
+}
+
+.project-card--visual .project-tag {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.project-card--visual .project-card__actions {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  margin-top: 0;
+  padding-top: 14px;
+}
+
+.project-card--visual .project-link {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.project-card--visual .project-link--primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #1d1b19;
+}
+
+.project-card--visual .project-link--secondary {
+  background: rgba(0, 0, 0, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.project-card--visual:hover .project-card__image,
+.project-card--visual:focus-within .project-card__image {
+  transform: scale(1.06);
+}
+
+.project-card--visual:hover .project-card__overlay,
+.project-card--visual:focus-within .project-card__overlay {
+  opacity: 1;
+}
+
+.project-card--visual:hover .project-card__hover,
+.project-card--visual:focus-within .project-card__hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card--visual.tilt-active {
+  transform:
+    translateY(-4px)
+    perspective(900px)
+    rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__image,
+  .project-card__overlay,
+  .project-card__hover,
+  .project-card {
+    transition: none !important;
+  }
+
+  .project-card--visual.tilt-active {
+    transform: translateY(-4px);
+  }
+}
+
+@media (hover: none) {
+  .project-card__overlay {
+    opacity: 1;
+  }
+
+  .project-card__hover {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .project-card__top {
   margin-bottom: 1rem;
 }

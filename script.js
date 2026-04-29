@@ -3,9 +3,52 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("main section[id]");
   const sectionIds = ["home", "about", "gallery", "skills", "projects", "contact"];
 
+  const supportsTilt =
+    window.matchMedia &&
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
+    !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
+  if (supportsTilt) {
+    document.querySelectorAll(".project-card[data-tilt]").forEach((card) => {
+      const maxTilt = 6;
+
+      function setTilt(e) {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        const tiltY = (x - 0.5) * (maxTilt * 2);
+        const tiltX = (0.5 - y) * (maxTilt * 2);
+
+        card.style.setProperty("--tilt-x", `${tiltX.toFixed(2)}deg`);
+        card.style.setProperty("--tilt-y", `${tiltY.toFixed(2)}deg`);
+      }
+
+      card.addEventListener("mouseenter", () => {
+        card.classList.add("tilt-active");
+      });
+
+      card.addEventListener("mousemove", setTilt);
+
+      card.addEventListener("mouseleave", () => {
+        card.classList.remove("tilt-active");
+        card.style.removeProperty("--tilt-x");
+        card.style.removeProperty("--tilt-y");
+      });
+    });
+  }
+
   function setActiveLink(id) {
+    const page = (window.location.pathname.split("/").pop() || "").toLowerCase();
+    const isProjectsPage = page === "projects.html";
+
     navLinks.forEach((link) => {
-      const isMatch = link.getAttribute("href") === `#${id}`;
+      const href = link.getAttribute("href") || "";
+      const hash = href.includes("#") ? href.slice(href.indexOf("#")) : "";
+      const isHashMatch = hash === `#${id}`;
+      const isProjectsMatch =
+        id === "projects" && isProjectsPage && href.toLowerCase().endsWith("projects.html");
+
+      const isMatch = isHashMatch || isProjectsMatch;
       link.classList.toggle("active", isMatch);
 
       if (isMatch) {
