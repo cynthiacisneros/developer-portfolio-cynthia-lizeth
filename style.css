@@ -588,10 +588,11 @@ h3 {
   border-top: 1px solid var(--border-light);
 }
 
-#skills {
+#skills.skills-section {
   background:
-    radial-gradient(ellipse at top, rgba(255, 255, 255, 0.05), transparent 45%),
-    linear-gradient(165deg, #0b0b0b 0%, #121212 52%, #0a0a0a 100%);
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.06), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.04), transparent 50%),
+    #0b0b0b;
   color: rgba(244, 244, 242, 0.92);
   padding-top: clamp(6rem, 9vw, 7.25rem);
   padding-bottom: clamp(6rem, 9vw, 7.25rem);
@@ -605,42 +606,61 @@ h3 {
   color: #ffffff;
 }
 
-#skills .section-intro {
-  max-width: 42rem;
-  margin-left: auto;
-  margin-right: auto;
-  color: rgba(214, 214, 210, 0.86);
+#skills.skills-section .section-intro {
+  max-width: 600px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-#skills .card-grid {
+#skills .skills-grid {
   margin-top: 46px;
+  display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: 2rem;
   align-items: stretch;
 }
 
-#skills .info-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+#skills .skills-card {
+  position: relative;
+  isolation: isolate;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+#skills .skills-card::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent 70%);
+  z-index: -1;
+  filter: blur(20px);
+  pointer-events: none;
   border-radius: 22px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-#skills .info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 46px rgba(0, 0, 0, 0.38);
-  border-color: rgba(255, 255, 255, 0.2);
+#skills .skills-card:hover,
+#skills .skills-card:focus-within {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
-#skills .info-card h3 {
+#skills .skills-card h3 {
   color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
   font-size: 1.08rem;
-  font-weight: 650;
 }
 
-#skills .info-card p {
-  color: rgba(214, 214, 210, 0.84);
+#skills .skills-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 0;
 }
 
 .section--projects-showcase {
@@ -847,7 +867,7 @@ h3 {
   transform: translateY(-4px);
   border-color: rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 28px 52px rgba(0, 0, 0, 0.48);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
 /* Home: smaller project previews — solid overlay, clean image (showcase only; not FuelPay) */
@@ -986,7 +1006,7 @@ h3 {
 .section--projects .project-card--visual:hover,
 .section--projects .project-card--visual:focus-within {
   transform: translateY(-4px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
   border-color: rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.05);
 }
@@ -1017,7 +1037,7 @@ h3 {
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
   border-color: rgba(29, 27, 25, 0.14);
   background: #ffffff;
 }
@@ -1129,7 +1149,8 @@ h3 {
   .project-card__hover,
   .project-card,
   .featured-project,
-  .support-project-card {
+  .support-project-card,
+  #skills .skills-card {
     transition: none !important;
   }
 
@@ -1145,6 +1166,8 @@ h3 {
   .featured-project:focus-within,
   .support-project-card:hover,
   .support-project-card:focus-within,
+  #skills .skills-card:hover,
+  #skills .skills-card:focus-within,
   .section--projects .project-card--visual:hover,
   .section--projects .project-card--visual:focus-within {
     transform: none;
@@ -1375,7 +1398,7 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  #skills .card-grid {
+  #skills .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1437,8 +1460,8 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  #skills .card-grid {
+  #skills .skills-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 1.25rem;
   }
 }
