@@ -51,10 +51,6 @@ html {
     transform: none !important;
     transition: none !important;
   }
-
-  #about.about-section .about-image {
-    transform: none;
-  }
 }
 
 body {
@@ -452,26 +448,23 @@ h3 {
   text-align: center;
 }
 
-/* About: soft neutral / dark blend — continuous with Skills, not a hard break */
+/* About: bold editorial layout — open, no card; image blends into section */
 #about.about-section {
   background:
-    radial-gradient(circle at 18% 22%, rgba(244, 242, 238, 0.06), transparent 46%),
-    radial-gradient(circle at 82% 78%, rgba(255, 255, 255, 0.045), transparent 55%),
-    linear-gradient(165deg, #0e0e10 0%, #111113 48%, #0c0c0e 100%);
-  color: rgba(244, 244, 242, 0.92);
+    radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.06), transparent 35%),
+    radial-gradient(circle at 88% 75%, rgba(255, 255, 255, 0.04), transparent 50%),
+    #0b0b0b;
+  color: rgba(244, 244, 242, 0.94);
   padding: 0;
 }
 
-#about.about-section .about-container {
+#about.about-section .about-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6rem 2rem;
-}
-
-#about.about-section .about-content {
+  padding: 7rem 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 5rem;
   align-items: center;
 }
 
@@ -479,6 +472,7 @@ h3 {
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  min-width: 0;
 }
 
 #about.about-section .about-copy {
@@ -491,17 +485,23 @@ h3 {
 
 #about.about-section .about-eyebrow,
 #about.about-section .about-copy .eyebrow {
-  color: rgba(244, 244, 242, 0.74);
+  color: rgba(255, 255, 255, 0.55);
   text-align: left;
-  margin: 0 0 14px;
+  margin: 0 0 1rem;
   width: 100%;
+  letter-spacing: 0.32em;
 }
 
 #about.about-section .about-copy h2 {
   text-align: left;
-  margin-bottom: clamp(2rem, 4.5vw, 3rem);
+  margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
   width: 100%;
   color: #ffffff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.75rem, 6vw, 5rem);
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 #about.about-section .about-copy h2:has(+ h3) {
@@ -510,44 +510,51 @@ h3 {
 
 #about.about-section .about-copy h3 {
   font-family: "Inter", sans-serif;
-  font-size: 1.05rem;
-  font-weight: 400;
+  font-size: 1.12rem;
+  font-weight: 500;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.62);
-  margin-top: 8px;
-  margin-bottom: 1.35rem;
-  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 0.5rem;
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.03em;
 }
 
 #about.about-section .about-image {
   position: relative;
   width: 100%;
-  max-width: 420px;
-  margin-inline: auto;
-  border-radius: 16px;
+  max-width: 480px;
+  margin-inline: 0;
   overflow: hidden;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
-  transform: translateY(20px);
+}
+
+#about.about-section .about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(11, 11, 11, 0.15), rgba(11, 11, 11, 0.55));
+  pointer-events: none;
 }
 
 #about.about-section .about-image img {
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   height: auto;
   display: block;
-  border-radius: 16px;
+  border-radius: 0;
   object-fit: cover;
+  opacity: 0.9;
+  filter: grayscale(100%) contrast(1.05);
 }
 
 #about.about-section .about-text {
-  max-width: 500px;
-  line-height: 1.7;
+  max-width: 38rem;
 }
 
 #about.about-section .about-text p {
-  margin: 0 0 1.35rem;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 1.04rem;
+  margin: 0 0 1.25rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.1rem;
+  line-height: 1.75;
 }
 
 #about.about-section .about-text p:last-child {
@@ -557,15 +564,25 @@ h3 {
 @media (max-width: 768px) {
   #about.about-section .about-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+    padding: 5rem 1.5rem;
+  }
+
+  #about.about-section .about-image {
+    max-width: none;
   }
 
   #about.about-section .about-image img {
-    max-width: 100%;
+    width: 100%;
+    max-width: none;
   }
 
   #about.about-section .about-visual {
-    justify-content: center;
+    justify-content: stretch;
+  }
+
+  #about.about-section .about-image::after {
+    background: linear-gradient(to bottom, rgba(11, 11, 11, 0.12), rgba(11, 11, 11, 0.5));
   }
 }
 
@@ -1411,7 +1428,7 @@ h3 {
     padding-right: 18px;
   }
 
-  #about.about-section .about-container {
+  #about.about-section .about-content {
     padding-left: max(1.25rem, 18px);
     padding-right: max(1.25rem, 18px);
     padding-top: 4rem;
