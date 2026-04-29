@@ -45,6 +45,7 @@ html {
   }
 }
 
+body {
   margin: 0;
   font-family: "Inter", sans-serif;
   background: var(--bg-light);
@@ -910,7 +911,15 @@ h3 {
   transform: scale(1.03);
 }
 
-.support-project-card__body {
+.support-project-card__@media (prefers-reduced-motion: reduce) {
+  html.js .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
