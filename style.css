@@ -743,7 +743,7 @@ h3 {
 
 #skills .skills-card:hover,
 #skills .skills-card:focus-within {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: rgba(255, 255, 255, 0.16);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
@@ -804,11 +804,54 @@ h3 {
   background: rgba(0, 0, 0, 0.2);
 }
 
+#inspires.inspires-section .inspires-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.55));
+  pointer-events: none;
+  transition: background 0.35s ease;
+}
+
 #inspires.inspires-section .inspires-item img {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+#inspires.inspires-section .inspires-caption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#inspires.inspires-section .inspires-item:hover::after,
+#inspires.inspires-section .inspires-item:focus-within::after {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.42));
+}
+
+#inspires.inspires-section .inspires-item:hover img,
+#inspires.inspires-section .inspires-item:focus-within img {
+  transform: scale(1.04);
+}
+
+#inspires.inspires-section .inspires-item:hover .inspires-caption,
+#inspires.inspires-section .inspires-item:focus-within .inspires-caption {
+  opacity: 1;
 }
 
 .section--projects-showcase {
@@ -1299,7 +1342,12 @@ h3 {
   .project-card,
   .featured-project,
   .support-project-card,
-  #skills .skills-card {
+  #skills .skills-card,
+  #inspires.inspires-section .inspires-item,
+  #inspires.inspires-section .inspires-item img,
+  #inspires.inspires-section .inspires-item::after,
+  #inspires.inspires-section .inspires-caption,
+  #contact.contact-section .contact-links a {
     transition: none !important;
   }
 
@@ -1307,7 +1355,9 @@ h3 {
   .project-card--visual:focus-within .project-card__image,
   .featured-project:hover .featured-image img,
   .section--projects-showcase .support-project-card:hover .project-preview img,
-  .section--projects-showcase .support-project-card:focus-within .project-preview img {
+  .section--projects-showcase .support-project-card:focus-within .project-preview img,
+  #inspires.inspires-section .inspires-item:hover img,
+  #inspires.inspires-section .inspires-item:focus-within img {
     transform: none;
   }
 
@@ -1318,7 +1368,13 @@ h3 {
   #skills .skills-card:hover,
   #skills .skills-card:focus-within,
   .section--projects .project-card--visual:hover,
-  .section--projects .project-card--visual:focus-within {
+  .section--projects .project-card--visual:focus-within,
+  #inspires.inspires-section .inspires-item:hover,
+  #inspires.inspires-section .inspires-item:focus-within {
+    transform: none;
+  }
+
+  #contact.contact-section .contact-links a:hover {
     transform: none;
   }
 }
@@ -1461,110 +1517,117 @@ h3 {
   outline-offset: 2px;
 }
 
-/* Contact: editorial split layout — open, no card */
+/* Contact: confident closing — split layout, no card */
 #contact.contact-section {
+  padding: 8rem 2rem;
   background:
-    radial-gradient(circle at 22% 30%, rgba(255, 255, 255, 0.06), transparent 42%),
-    radial-gradient(circle at 78% 70%, rgba(255, 255, 255, 0.04), transparent 50%),
-    linear-gradient(180deg, #0a0a0b 0%, #0b0b0d 100%);
+    radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.06), transparent 35%),
+    #0b0b0b;
   color: rgba(244, 244, 242, 0.92);
-  padding: 0;
 }
 
 #contact.contact-section .contact-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 7rem 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 4rem;
   align-items: center;
 }
 
-#contact.contact-section .contact-lede .eyebrow {
-  color: rgba(244, 244, 242, 0.74);
+#contact.contact-section .section-label {
   margin: 0 0 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(244, 244, 242, 0.74);
 }
 
-#contact.contact-section .contact-heading {
+#contact.contact-section .contact-copy h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  line-height: 1.1;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
   color: #ffffff;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
 }
 
-#contact.contact-section .contact-subtext {
+#contact.contact-section .contact-copy p:not(.section-label) {
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.1rem;
-  line-height: 1.75;
-  max-width: 420px;
+  line-height: 1.7;
   margin: 0;
+  max-width: 36rem;
 }
 
 #contact.contact-section .contact-links {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-#contact.contact-section .contact-links > p {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.35rem 0.65rem;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-#contact.contact-section .contact-link {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.85);
+#contact.contact-section .contact-links a {
+  color: #ffffff;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 2px;
-  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  font-size: 1.15rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.25s ease;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
 }
 
-#contact.contact-section .contact-link:hover {
-  color: #ffffff;
-  border-bottom-color: rgba(255, 255, 255, 0.45);
-  transform: translateX(4px);
+#contact.contact-section .contact-links a:hover {
+  transform: translateX(6px);
+  border-bottom-color: rgba(255, 255, 255, 0.6);
 }
 
-#contact.contact-section .contact-link:focus-visible {
+#contact.contact-section .contact-links a:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.55);
-  outline-offset: 3px;
-  border-radius: 2px;
+  outline-offset: 4px;
 }
 
-#contact.contact-section .contact-email {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: #ffffff;
-  border-bottom-color: rgba(255, 255, 255, 0.35);
-}
+@media (prefers-reduced-motion: no-preference) {
+  .featured-project,
+  .support-project-card,
+  #skills .skills-card,
+  #inspires.inspires-section .inspires-item,
+  #contact.contact-section .contact-links a,
+  .section--projects-showcase .project-preview img,
+  .section--projects-showcase .project-preview::after,
+  .section--projects .project-card--visual,
+  .project-card,
+  .project-card__image,
+  .featured-image img {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease,
+      opacity 0.3s ease,
+      background 0.3s ease;
+  }
 
-#contact.contact-section .contact-email:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.65);
-}
-
-@media (max-width: 768px) {
-  #contact.contact-section .contact-container {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding: 5.5rem 1.5rem;
-    align-items: start;
+  #inspires.inspires-section .inspires-item:hover,
+  #inspires.inspires-section .inspires-item:focus-within {
+    transform: translateY(-4px);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  #contact.contact-section .contact-link:hover {
-    transform: none;
+@media (max-width: 768px) {
+  #contact.contact-section {
+    padding: 5.5rem 1.5rem;
+  }
+
+  #contact.contact-section .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  #contact.contact-section .contact-copy h2 {
+    font-size: clamp(2.5rem, 12vw, 4rem);
   }
 }
 
@@ -1633,7 +1696,7 @@ h3 {
     padding-right: 18px;
   }
 
-  #contact.contact-section .contact-container {
+  #contact.contact-section {
     padding-left: max(1.25rem, 18px);
     padding-right: max(1.25rem, 18px);
   }
