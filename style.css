@@ -45,6 +45,14 @@ html {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html.js .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
