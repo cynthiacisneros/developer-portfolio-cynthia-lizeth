@@ -577,22 +577,23 @@ h3 {
 }
 
 #about.about-section .about-text p:first-of-type {
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  line-height: 1.35;
-  color: #ffffff;
-  font-weight: 600;
+  max-width: 480px;
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
   margin-bottom: 1.75rem;
 }
 
 #about.about-section .about-text p:not(:first-of-type) {
   font-size: 1.08rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 #about.about-section .about-text strong {
+  font-weight: 600;
   color: #ffffff;
-  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -633,8 +634,9 @@ h3 {
   }
 
   #about.about-section .about-text p:first-of-type {
-    font-size: clamp(1.22rem, 4vw, 1.65rem);
-    line-height: 1.38;
+    max-width: none;
+    font-size: clamp(1.15rem, 3.4vw, 1.45rem);
+    line-height: 1.58;
     margin-bottom: 1.5rem;
   }
 
