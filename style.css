@@ -112,7 +112,7 @@ img {
   min-height: calc(100vh - 90px);
   display: flex;
   align-items: center;
-  padding: clamp(72px, 10vw, 110px) 24px;
+  padding: clamp(72px, 10vw, 110px) 24px clamp(4rem, 8vw, 6rem);
   color: #f4f4f2;
   text-align: left;
   position: relative;
@@ -583,9 +583,11 @@ h3 {
 
 .section--projects-showcase {
   background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 16%, rgba(255, 255, 255, 0) 28%),
     radial-gradient(ellipse at top, rgba(255, 255, 255, 0.06), transparent 42%),
     linear-gradient(165deg, #0a0a0a 0%, #101010 48%, #070707 100%);
   color: rgba(244, 244, 242, 0.92);
+  padding: clamp(6rem, 9vw, 7.25rem) 24px 100px;
 }
 
 .section--projects-showcase .eyebrow {
@@ -625,7 +627,7 @@ h3 {
 }
 
 .featured-project__media {
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
   min-height: 360px;
   background: #0d0d0d;
@@ -765,7 +767,7 @@ h3 {
 .project-card--visual .project-card__frame {
   position: relative;
   overflow: hidden;
-  border-radius: inherit;
+  border-radius: 16px;
   background: rgba(255, 255, 255, 0.8);
   aspect-ratio: 4 / 3;
 }
@@ -783,7 +785,7 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.55) 78%, rgba(0, 0, 0, 0.72) 100%);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.38) 76%, rgba(0, 0, 0, 0.54) 100%);
   opacity: 0;
   transition: opacity 0.45s ease;
 }
