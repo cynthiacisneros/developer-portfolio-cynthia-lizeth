@@ -467,8 +467,8 @@ h3 {
 
 #about.about-section .about-layout {
   display: grid;
-  grid-template-columns: minmax(160px, 22%) minmax(0, 1fr);
-  gap: clamp(2.25rem, 5vw, 3.5rem);
+  grid-template-columns: minmax(0, min(420px, 100%)) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5.5vw, 4rem);
   align-items: start;
 }
 
@@ -512,29 +512,32 @@ h3 {
   letter-spacing: 0.02em;
 }
 
-#about.about-section .about-image-card {
-  overflow: hidden;
+#about.about-section .about-image {
+  position: relative;
   width: 100%;
-}
-
-#about.about-section .about-layout .about-image-card--editorial {
-  max-width: 200px;
-  width: 100%;
+  max-width: 420px;
   margin-inline: 0;
-  border-radius: 14px;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow:
-    0 20px 44px rgba(0, 0, 0, 0.55),
-    0 4px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-#about.about-section .about-layout .about-image-card--editorial img {
+#about.about-section .about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#about.about-section .about-image img {
   width: 100%;
+  max-width: 420px;
   height: auto;
   display: block;
-  border-radius: 12px;
+  border-radius: 18px;
   object-fit: cover;
 }
 
@@ -1355,8 +1358,9 @@ h3 {
     justify-content: center;
   }
 
-  #about.about-section .about-layout .about-image-card--editorial {
-    max-width: min(220px, 68vw);
+  #about.about-section .about-image {
+    max-width: min(420px, 88vw);
+    margin-inline: auto;
   }
 
   #about.about-section .about-layout__column {
