@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const sections = document.querySelectorAll("main section[id]");
-  const sectionIds = ["home", "about", "skills", "projects", "inspires", "contact"];
+  const sectionIds = ["home", "projects", "skills", "about", "inspires", "contact"];
 
   const supportsTilt =
     window.matchMedia &&
