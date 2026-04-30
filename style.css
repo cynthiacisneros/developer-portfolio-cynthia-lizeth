@@ -1133,6 +1133,19 @@ h3 {
   transform: scale(1.03);
 }
 
+.section--projects-showcase .minor-project-card .project-preview img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.minor-project-card img {
+  filter: grayscale(100%) saturate(0%) brightness(0.7) contrast(1.1);
+}
+
+.minor-project-card:hover img,
+.minor-project-card:focus-within img {
+  filter: grayscale(100%) saturate(0%) brightness(0.85) contrast(1.15);
+}
+
 .support-project-card__body {
   display: flex;
   flex-direction: column;
