@@ -69,13 +69,13 @@ section {
   position: relative;
 }
 
-section::before {
+section + section::before {
   content: "";
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
+  width: 50%;
   height: 1px;
   background: linear-gradient(
     to right,
@@ -119,21 +119,6 @@ main > section:not(.hero-section) {
 
 .section {
   scroll-margin-top: 140px;
-}
-
-.section-fade {
-  position: relative;
-  height: 64px;
-  pointer-events: none;
-  flex-shrink: 0;
-}
-
-.section-fade::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent, #0b0b0b);
 }
 
 #home.section {
