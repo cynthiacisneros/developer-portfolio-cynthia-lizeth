@@ -59,35 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function getCurrentSection() {
-    const checkpoint = window.innerHeight * 0.35;
-    let currentId = "home";
-    let smallestDistance = Infinity;
-
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      const distance = Math.abs(rect.top - checkpoint);
-
-      if (rect.top <= checkpoint && rect.bottom >= checkpoint && distance < smallestDistance) {
-        smallestDistance = distance;
-        currentId = section.id;
-      }
-    });
-
-    return currentId;
-  }
-
-  function updateActiveOnScroll() {
-    const currentSection = getCurrentSection();
-    setActiveLink(currentSection);
-
-    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 20) {
-      setActiveLink("contact");
-    }
-  }
-
   setActiveLink("home");
-  updateActiveOnScroll();
+  // Avoid per-scroll layout work (getBoundingClientRect on every section).
+  // We'll use an IntersectionObserver instead to keep scrolling smooth.
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -126,35 +100,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.addEventListener("scroll", updateActiveOnScroll, { passive: true });
-  window.addEventListener("resize", updateActiveOnScroll);
+  function initActiveSectionObserver() {
+    if (!("IntersectionObserver" in window)) return;
 
-  function initScrollReveals() {
-    const sections = document.querySelectorAll("main section.scroll-reveal");
-    if (!sections.length) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      sections.forEach((el) => el.classList.add("scroll-reveal--visible"));
-      return;
-    }
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
 
     const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("scroll-reveal--visible");
-            obs.unobserve(entry.target);
-          }
-        });
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+
+        if (visible?.target?.id) {
+          setActiveLink(visible.target.id);
+        }
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -32px 0px",
+        // Treat a section as "current" once its top is in the upper-middle viewport.
+        rootMargin: "-35% 0px -55% 0px",
+        threshold: 0,
       }
     );
 
     sections.forEach((section) => observer.observe(section));
   }
 
-  initScrollReveals();
+  initActiveSectionObserver();
 });
